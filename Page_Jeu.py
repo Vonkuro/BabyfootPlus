@@ -1,4 +1,5 @@
 import tkinter as tk
+from PIL import ImageTk, Image  
 
 class EnJeu():
     def __init__(self):
@@ -37,7 +38,7 @@ class EnJeu():
         self.equipe.pack()
         self.chrono.pack()
         self.boutons.pack()
-        
+
         #Définition des Labels
         self.Label_titre = tk.Label(master= self.titre)
 
@@ -67,6 +68,12 @@ class EnJeu():
         self.Label_score_rouge.grid(row=0,column=4)
         self.Bouton_plus_rouge.grid(row=0,column=5)
         self.Bouton_moins_rouge.grid(row=0,column=6)
+
+        self.Label_minutes.grid(row=0,column=0)
+        self.Label_chrono_tiret.grid(row=0,column=0)
+        self.Label_secondes.grid(row=0,column=0)
+
+        self.Bouton_debut.pack()
 
     def affiche(self):
         self.page.pack()
