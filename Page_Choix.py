@@ -10,8 +10,15 @@ class Menu():
         self.corps = tk.Frame(master= self.page)
         self.boutons = tk.Frame(master= self.corps)
         self.textes = tk.Frame(master= self.corps)
-        
+
         #Paramétrage des Frames
+
+        #Placement des Frames
+        self.titre.pack()
+        self.trait.pack()
+        self.corps.pack()
+        self.textes.pack()
+        self.boutons.pack()
 
         #Définition des Boutons
         self.Bouton_classique = tk.Button(master= self.boutons)
@@ -24,7 +31,7 @@ class Menu():
         #Définition des Labels
         self.Label_titre = tk.Label(master= self.titre)
         self.Label_bonjour = tk.Label(master= self.textes)
-
+        
         #Paramétrage des Labels
 
         #Placement des Wigets
@@ -37,19 +44,10 @@ class Menu():
 
     def affiche(self):
         self.page.pack()
-        self.titre.pack()
-        self.trait.pack()
-        self.corps.pack()
-        self.textes.pack()
-        self.boutons.pack()
+        
 
     def cache(self):
         self.page.pack_forget()
-        self.titre.pack_forget()
-        self.trait.pack_forget()
-        self.corps.pack_forget()
-        self.textes.pack_forget()
-        self.boutons.pack_forget()
 
 
 

@@ -14,6 +14,8 @@ class EnJeu():
 
         #Paramétrage des Frames
 
+        #Placement des Frames
+
         #Définition des Boutons
         self.Bouton_retour = tk.Button(master= self.titre)
 
@@ -28,7 +30,14 @@ class EnJeu():
         self.Bouton_moins_rouge = tk.Button(master= self.score)
 
         #Paramétrage des Boutons
-
+        self.titre.pack()
+        self.trait.pack()
+        self.corps.pack()
+        self.score.pack()
+        self.equipe.pack()
+        self.chrono.pack()
+        self.boutons.pack()
+        
         #Définition des Labels
         self.Label_titre = tk.Label(master= self.titre)
 
@@ -61,20 +70,7 @@ class EnJeu():
 
     def affiche(self):
         self.page.pack()
-        self.titre.pack()
-        self.trait.pack()
-        self.corps.pack()
-        self.score.pack()
-        self.equipe.pack()
-        self.chrono.pack()
-        self.boutons.pack()
+        
 
     def cache(self):
         self.page.pack_forget()
-        self.titre.pack_forget()
-        self.trait.pack_forget()
-        self.corps.pack_forget()
-        self.score.pack_forget()
-        self.equipe.pack_forget()
-        self.chrono.pack_forget()
-        self.boutons.pack_forget()
