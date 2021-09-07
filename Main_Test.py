@@ -2,10 +2,19 @@ import tkinter as tk
 from Page_Choix import *
 from Page_Jeu import *
 
-fenetre = tk.Tk()
+ecran = tk.Tk()
+ecran.geometry('1920x1080')
+ecran.resizable(width=0, height=0)
+ecran.configure(bg="gray")
+
 menu = Menu()
 jeu = EnJeu()
 
-jeu.affiche()
+menu.affiche()
 
-fenetre.mainloop()
+#menu.cache()
+
+ecran.mainloop()
+
+#menu = Menu()
+#menu = EnJeu()

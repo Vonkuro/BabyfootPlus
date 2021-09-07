@@ -3,9 +3,17 @@ from PIL import ImageTk, Image
 
 class EnJeu():
     def __init__(self):
+        """
+        #Définition de la fenêtre
+        self.page = tk.Tk()
+
+        #Paramétrage de la fenêtre
+        self.page.geometry('1920x1080')
+        self.page.resizable(width=0, height=0)
+        """
         #Définition des Frames
         self.page = tk.Frame()
-        self.titre =tk.Frame(master= self.page)
+        self.titre = tk.Frame(master= self.page)
         self.trait = tk.Frame(master= self.page)
         self.corps = tk.Frame(master= self.page)
         self.score = tk.Frame(master= self.corps)
@@ -74,6 +82,10 @@ class EnJeu():
         self.Label_secondes.grid(row=0,column=0)
 
         self.Bouton_debut.pack()
+     
+        #Placement de la fenêtre
+        #self.page.mainloop()
+
 
     def affiche(self):
         self.page.pack()
@@ -81,3 +93,4 @@ class EnJeu():
 
     def cache(self):
         self.page.pack_forget()
+        
