@@ -1,16 +1,18 @@
 import tkinter as tk
+from tkinter.ttk import *
 
 class Menu():
     def __init__(self):
         #Définition des Frames
         self.page = tk.Frame()
-        self.titre =tk.Frame(master= self.page)
+        self.titre = tk.Frame(master= self.page)
         self.trait = tk.Frame(master= self.page)
         self.corps = tk.Frame(master= self.page)
         self.boutons = tk.Frame(master= self.corps)
         self.textes = tk.Frame(master= self.corps)
 
         #Paramétrage des Frames
+        self.titre.config(width=1920, height=300, bg="black")
 
         #Placement des Frames
         self.titre.pack()
@@ -43,6 +45,7 @@ class Menu():
 
     def affiche(self):
         self.page.pack()
+        
         
 
     def cache(self):

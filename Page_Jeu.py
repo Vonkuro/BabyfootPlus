@@ -5,7 +5,7 @@ class EnJeu():
     def __init__(self):
         #Définition des Frames
         self.page = tk.Frame()
-        self.titre =tk.Frame(master= self.page)
+        self.titre = tk.Frame(master= self.page)
         self.trait = tk.Frame(master= self.page)
         self.corps = tk.Frame(master= self.page)
         self.score = tk.Frame(master= self.corps)
