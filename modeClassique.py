@@ -1,3 +1,5 @@
+import time
+
 if distance1<20:
     Label_score_rouge = Label_score_rouge + 1
 
@@ -14,6 +16,7 @@ while temps pas fini -------------------------------
         Label_score_bleu = Label_score_bleu + 1
 
 """ mode chrono plus temps """
+
 
 while temps pas fini -------------------------------
     valeurbut = 1
