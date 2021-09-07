@@ -10,6 +10,7 @@ class Menu():
         self.corps = tk.Frame(master= self.page)
         self.boutons = tk.Frame(master= self.corps)
         self.textes = tk.Frame(master= self.corps)
+        
         #Paramétrage des Frames
 
         #Définition des Boutons
@@ -17,11 +18,13 @@ class Menu():
         self.Bouton_chrono = tk.Button(master= self.boutons)
         self.Bouton_chrono_plus_temps = tk.Button(master= self.boutons)
         self.Bouton_chrono_plus_but = tk.Button(master= self.boutons)
+
         #Paramétrage des Boutons
 
         #Définition des Labels
         self.Label_titre = tk.Label(master= self.titre)
         self.Label_bonjour = tk.Label(master= self.textes)
+
         #Paramétrage des Labels
 
         #Placement des Wigets
