@@ -1,0 +1,88 @@
+Menu des différents modes de jeux
+
+Résolution : 
+-	1920 par 1080p
+
+Encadré noir : 
+-	Couleur : 000000, L : 1920 px, H : 200 px, X : 0 et Y : 0
+
+Texte blanc de l’encadré noir : 
+-	Couleur : ffffff, L : 928,46 px, H : 142,31 px, X : 495,5 px et Y : 65,12 px
+
+Trais vert pour séparer l’encadré noir du la partie grise : 
+-	Couleur : 2aff00, L : 1920 px, H : 10 px, X : 0 px et Y : 200 px
+
+Carré gris : 
+-	Couleur : 818181, L : 1920 px, H : 880 px, X : 0 px et Y : 200 px
+
+Ecriture dans le carré gris : 
+-	Couleur : ffffff, L : 692,29 px, H : 35,32 px, X : 613,4 px et Y : 270 px
+
+Premier carré gris avec contour noir : 
+-	Couleur : 4f4f4f pour le gris, le contour : 000000, L : 300 px, H : 400 px, X : 92 px et Y : 415 px
+
+Premier carré gris image du mode classique :
+-	L : 222 px, H : 158 px, X : 131 px et Y : 457 px
+
+Texte du titre du premier carré gris : 
+-	Couleur : ffffff, L : 170,46 px, H : 45,92 px, X : 156,88 px et Y : 650 px, 130 pt
+
+Texte du paragraphe du premier carré gris : 
+-	Couleur : ffffff, L : 153,85 px, H : 31,79 px, X : 165 px et Y : 715 px
+
+Deuxième carré gris avec contour noir : 
+-	Couleur : 4f4f4f, contour : 000000, L : 300 px, H : 400 px, X : 570 px et Y : 415 px
+
+Deuxième carré gris image du Chrono :
+-	L : 148 px, H : 190 px, X : 646 px et Y : 450 px
+
+Texte du titre du deuxième carré gris : 
+-	Couleur : ffffff, L : 127,32 px, H : 45,92 px, X : 656,5 px et Y : 650 px, 130 pt
+
+Texte du paragraphe du deuxième carré gris :
+-	Couleur : ffffff, L : 221,05 px, H : 31,79 px, X : 609,49 px et Y : 715 px
+
+Troisième carré gris avec contour noir : 
+-	Couleur : 4f4f4f, contour : 000000, L : 300 px, H : 400 px, X : 1048 px et Y : 415 px
+
+Troisième carré gris image chrono +1pt pour 1 min :
+-	L : 222 px, H : 222 px, X : 1054 px et Y : 450 px
+
+Texte du titre du troisième carré gris : 
+-	Couleur : ffffff, L : 254,62 px, H : 45,92 px, X : 1548,56 px et Y : 650 px, 130 pt
+
+Texte du paragraphe du troisième carré gris :  
+-	Couleur : ffffff, L : 263,31 px, H : 64,04 px, X : 1066,5 px et Y : 715 px
+
+Le petit + devant le chrono : 
+-	Couleur : ffffff, L : 22,67 px, H : 45,92 px, X : 1105,09 px et Y : 581,71 px
+
+Le +1 pt après le chrono :
+-	Couleur : ffffff, L : 76,63 px, H : 45,92 px, X : 1248 px et Y : 434,2 px, 
+
+Quatrième carré gris avec contour noir :  
+-	Couleur : 4f4f4f, contour : 000000, L : 300 px, H : 400 px, X : 1526 px et Y : 415 px
+
+Quatrième carré gris image but +1pt : 
+-	L : 253 px, H : 142 px, X : 1550 px et Y : 476 px
+
+Texte du titre du quatrième carré gris : 
+-	Couleur : ffffff, L : 76,63 px, H : 45,92 px, X : 1726,6 px et Y : 434,2 px, 130 pt
+
+Texte du paragraphe du quatrième carré gris :
+-	Couleur : ffffff, L : 227,1 px, H : 64,04 px, X : 1562,45 px, Y : 715 px et 90 pt
+
+
+
+
+
+
+
+
+
+
+
+
+Page pour commencer la partie :
+
+
