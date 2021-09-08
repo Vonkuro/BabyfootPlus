@@ -31,7 +31,7 @@ jeu.Bouton_plus_bleu.configure(command=lambda: plusBleu(jeu))
 jeu.Bouton_moins_rouge.configure(command=lambda: moinsRouge(jeu))
 jeu.Bouton_plus_rouge.configure(command=lambda: plusRouge(jeu))
 """
-menu.affiche()
+jeu.affiche()
 
 #menu.cache()
 
