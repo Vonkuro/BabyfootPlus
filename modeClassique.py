@@ -7,6 +7,14 @@ if distance2<20:
     Label_score_bleu = Label_score_bleu + 1
 
 --------------""" mode chrono """--------------
+debut = time.time()
+time.sleep(10)
+
+fin = time.time()
+
+temps = fin - debut
+
+print(temps)
 
 while temps pas fini 
     if distance1<20:
