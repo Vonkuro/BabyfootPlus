@@ -1,5 +1,6 @@
 import tkinter as tk
 from tkinter.ttk import *
+from PIL import ImageTk, Image 
 
 class Menu():
     def __init__(self):
@@ -20,13 +21,13 @@ class Menu():
         self.textes = tk.Frame(master= self.corps)
 
         #Paramétrage des Frames
-        self.titre.configure(width=1920, height=200, bg="black")
+        self.titre.configure(width=1920, height=200, bg="#000000")
         self.titre.pack_propagate(0)
 
-        self.trait.configure(width=1920, height=10, bg="2aff00")
+        self.trait.configure(width=1920, height=10, bg="#2aff00")
         self.trait.pack_propagate(0)
 
-        self.corps.configure(width=1920, height=700, bg="gray")
+        self.corps.configure(width=1920, height=880, bg="#818181")
         self.corps.pack_propagate(0)
 
         #Placement des Frames
@@ -43,7 +44,10 @@ class Menu():
         self.Bouton_chrono_plus_but = tk.Button(master= self.boutons)
 
         #Paramétrage des Boutons
-
+            #Images
+        photo_classique = Image.open("D:\EPSI-Volumineux\Test git\BabyfootPlus\Images\Images\Babyfoot_blanc.png")
+        photo_classique = ImageTk.PhotoImage(photo_classique)
+        self.Bouton_classique.configure(image= photo_classique, bg="#4f4f4f")
         #Définition des Labels
         self.Label_titre = tk.Label(master= self.titre)
         self.Label_bonjour = tk.Label(master= self.textes)
@@ -67,4 +71,9 @@ class Menu():
 
     def cache(self):
         self.page.pack_forget()
+
+    def _from_rgb(rgb):
+    #translates an rgb tuple of int to a tkinter friendly color code
+    
+        return "#%02x%02x%02x" % rgb   
 

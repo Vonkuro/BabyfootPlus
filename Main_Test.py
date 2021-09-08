@@ -5,7 +5,7 @@ from Page_Jeu import *
 ecran = tk.Tk()
 ecran.geometry('1920x1080')
 ecran.resizable(width=0, height=0)
-ecran.configure(bg="gray")
+#ecran.configure(bg="gray")
 
 menu = Menu()
 jeu = EnJeu()
