@@ -33,6 +33,11 @@ class Menu():
         self.intervale_texte.configure(width=613.56, bg="#818181")
         self.intervale_texte.pack_propagate(0)
 
+        self.boutons.configure(bg="#818181")
+
+        self.intervale1.configure(width=93, bg="#818181")
+        self.intervale1.pack_propagate(0)
+
         #Placement des Frames
         self.titre.pack()
         self.trait.pack()
@@ -40,6 +45,7 @@ class Menu():
         self.textes.place(x=0, y=55)
         self.intervale_texte.grid(row=0, column=0)
         self.boutons.place(x=0, y=205)
+        self.intervale1.grid(row=0, column=0)
 
         #Définition des Boutons
         self.Bouton_classique = tk.Button(master= self.boutons)
@@ -52,10 +58,29 @@ class Menu():
         photo_classique = Image.open(".\Images\Images_Renommee\Mode_Babyfoot.png")
         taille = (300 , 400)
         photo_classique = photo_classique.resize(taille)
-
         self.photoImage_classique = ImageTk.PhotoImage(photo_classique)
+
+        photo_chrono = Image.open(".\Images\Images_Renommee\Mode_Babyfoot.png")
+        taille = (300 , 400)
+        photo_chrono = photo_chrono.resize(taille)
+        self.photoImage_chrono = ImageTk.PhotoImage(photo_chrono)
+
+        photo_chrono_plus_temps = Image.open(".\Images\Images_Renommee\Mode_Babyfoot.png")
+        taille = (300 , 400)
+        photo_chrono_plus_temps = photo_chrono_plus_temps.resize(taille)
+        self.photoImage_chrono_plus_temps = ImageTk.PhotoImage(photo_chrono_plus_temps)
+
+        photo_chrono_plus_but = Image.open(".\Images\Images_Renommee\Mode_Babyfoot.png")
+        taille = (300 , 400)
+        photo_chrono_plus_but = photo_chrono_plus_but.resize(taille)
+        self.photoImage_chrono_plus_but = ImageTk.PhotoImage(photo_chrono_plus_but)
         
-        self.Bouton_classique.configure(image= self.photoImage_classique, bg= "#4f4f4f") 
+        self.Bouton_classique.configure(image= self.photoImage_classique, bg= "#4f4f4f")
+        self.Bouton_chrono.configure(image= self.photoImage_chrono, bg= "#4f4f4f") 
+        self.Bouton_chrono_plus_temps .configure(image= self.photoImage_chrono_plus_temps , bg= "#4f4f4f") 
+        self.Bouton_chrono_plus_but.configure(image= self.photoImage_chrono_plus_but, bg= "#4f4f4f") 
+
+        
 
         #Définition des Labels
         self.Label_titre = tk.Label(master= self.titre)
@@ -63,7 +88,7 @@ class Menu():
         
         #Paramétrage des Labels
         self.Label_titre.configure(text= "Menu des différents modes de jeux", font= "Arial, 50", bg= "#000000", fg="#ffffff")
-        self.Label_bonjour.configure(text= "Bienvenue dans l'application connectée du Babyfoot", font= "Arial, 10", bg= "#818181", fg="#ffffff")
+        self.Label_bonjour.configure(text= "Bienvenue dans l'application connectée du Babyfoot", font= "Arial, 25", bg= "#818181", fg="#ffffff")
 
         #Placement des Wigets
         self.Label_titre.place(x=495.5, y=65.12)
