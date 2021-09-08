@@ -73,17 +73,14 @@ class Menu():
         self.photoImage_classique = ImageTk.PhotoImage(photo_classique)
 
         photo_chrono = Image.open(".\Images\Images_Renommee\Mode_Chrono.png")
-        taille = (300 , 400)
         photo_chrono = photo_chrono.resize(taille)
         self.photoImage_chrono = ImageTk.PhotoImage(photo_chrono)
 
         photo_chrono_plus_temps = Image.open(".\Images\Images_Renommee\Mode_Chrono_Deux.png")
-        taille = (300 , 400)
         photo_chrono_plus_temps = photo_chrono_plus_temps.resize(taille)
         self.photoImage_chrono_plus_temps = ImageTk.PhotoImage(photo_chrono_plus_temps)
 
         photo_chrono_plus_but = Image.open(".\Images\Images_Renommee\Mode_But.png")
-        taille = (300 , 400)
         photo_chrono_plus_but = photo_chrono_plus_but.resize(taille)
         self.photoImage_chrono_plus_but = ImageTk.PhotoImage(photo_chrono_plus_but)
         

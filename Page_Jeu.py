@@ -22,23 +22,41 @@ class EnJeu():
         self.boutons = tk.Frame(master= self.corps)
 
         #Paramétrage des Frames
+
         self.titre.configure(width=1920, height=200, bg="#000000")
         self.titre.pack_propagate(0)
+        self.titre.grid_propagate(0)
 
         self.trait.configure(width=1920, height=10, bg="#2aff00")
         self.trait.pack_propagate(0)
+        self.trait.grid_propagate(0)
 
         self.corps.configure(width=1920, height=880, bg="#818181")
         self.corps.pack_propagate(0)
+        self.corps.grid_propagate(0)
+
+        self.score.configure(width=1574, height=209, bg="#4f4f4f", highlightbackground="#000000", highlightthickness=1)
+        self.score.pack_propagate(0)
+        self.score.grid_propagate(0)
+
+        self.equipe.configure(bg="#818181")
+        #self.equipe.pack_propagate(0)
+        #self.equipe.grid_propagate(0)
+
+        self.chrono.configure(width=1920, height=211.93, bg="#818181")
+        self.chrono.pack_propagate(0)
+        self.chrono.grid_propagate(0)
+
 
         #Placement des Frames
         self.titre.grid(row=0, column=0)
         self.trait.grid(row=1, column=0)
         self.corps.grid(row=2, column=0)
-        self.score.pack()
-        self.equipe.pack()
-        self.chrono.pack()
-        self.boutons.pack()
+        self.score.place(x=173,y= 34.5)
+        self.equipe.place(x=0,y= 270.5)
+        self.chrono.place(x=0,y= 409.81)
+
+        self.boutons.place(x=0,y= 756)
 
         #Définition des Boutons
         self.Bouton_retour = tk.Button(master= self.titre)
@@ -54,7 +72,61 @@ class EnJeu():
         self.Bouton_moins_rouge = tk.Button(master= self.score)
 
         #Paramétrage des Boutons
-        
+        photo_retour = Image.open(".\Images\Images_Renommee\Fleche_Retour.png")
+        taille = (91 , 77)
+        photo_retour = photo_retour.resize(taille)
+        self.photoImage_retour = ImageTk.PhotoImage(photo_retour)
+
+        photo_debut = Image.open(".\Images\Images_Renommee\Bouton_Commencer.png")
+        taille = (1513 , 126)
+        photo_debut = photo_debut.resize(taille)
+        self.photoImage_debut = ImageTk.PhotoImage(photo_debut)
+
+        photo_arret = Image.open(".\Images\Images_Renommee\Bouton_Arreter.png")
+        taille = (648 , 126)
+        photo_arret = photo_arret.resize(taille)
+        self.photoImage_arret = ImageTk.PhotoImage(photo_arret)
+
+        photo_pause = Image.open(".\Images\Images_Renommee\Bouton_Mettre_Pause.png")
+        taille = (648 , 126)
+        photo_pause = photo_pause.resize(taille)
+        self.photoImage_pause = ImageTk.PhotoImage(photo_pause)
+
+        photo_relance = Image.open(".\Images\Images_Renommee\Bouton_Lecture_Partie.png")
+        taille = (648 , 126)
+        photo_relance = photo_relance.resize(taille)
+        self.photoImage_relance = ImageTk.PhotoImage(photo_relance)
+
+        photo_plus_bleu = Image.open(".\Images\Images_Renommee\Bouton_Vert.png")
+        taille = (126 , 126)
+        photo_plus_bleu = photo_plus_bleu.resize(taille)
+        self.photoImage_plus_bleu = ImageTk.PhotoImage(photo_plus_bleu)
+
+        photo_moins_bleu = Image.open(".\Images\Images_Renommee\Bouton_Rouge.png")
+        taille = (126 , 126)
+        photo_moins_bleu = photo_moins_bleu.resize(taille)
+        self.photoImage_moins_bleu = ImageTk.PhotoImage(photo_moins_bleu)
+
+        photo_plus_rouge = Image.open(".\Images\Images_Renommee\Bouton_Vert.png")
+        taille = (126 , 126)
+        photo_plus_rouge = photo_plus_rouge.resize(taille)
+        self.photoImage_plus_rouge = ImageTk.PhotoImage(photo_plus_rouge)
+
+        photo_moins_rouge = Image.open(".\Images\Images_Renommee\Bouton_Rouge.png")
+        taille = (126 , 126)
+        photo_moins_rouge = photo_moins_rouge.resize(taille)
+        self.photoImage_moins_rouge = ImageTk.PhotoImage(photo_moins_rouge)
+
+        self.Bouton_retour.configure(image= self.photoImage_retour, bg= "#000000")
+        self.Bouton_debut.configure(image= self.photoImage_debut, bg="#818181")
+        self.Bouton_arret.configure(image= self.photoImage_arret, bg="#818181")
+        self.Bouton_pause.configure(image= self.photoImage_pause, bg="#818181")
+        self.Bouton_relance.configure(image= self.photoImage_relance, bg="#818181")
+
+        self.Bouton_plus_bleu.configure(image= self.photoImage_plus_bleu, bg="#4f4f4f")
+        self.Bouton_moins_bleu.configure(image= self.photoImage_moins_bleu, bg="#4f4f4f")
+        self.Bouton_plus_rouge.configure(image= self.photoImage_plus_rouge, bg="#4f4f4f")
+        self.Bouton_moins_rouge.configure(image= self.photoImage_moins_rouge, bg="#4f4f4f")
 
         #Définition des Labels
         self.Label_titre = tk.Label(master= self.titre)
@@ -68,30 +140,55 @@ class EnJeu():
         self.Label_drapeau_rouge = tk.Label(master= self.equipe)
         self.Label_texte_rouge = tk.Label(master= self.equipe)
 
-        self.Label_minutes = tk.Label(master= self.chrono)
-        self.Label_chrono_tiret = tk.Label(master= self.chrono)
-        self.Label_secondes = tk.Label(master= self.chrono)
+        self.Label_chrono = tk.Label(master= self.chrono)
+
         
         #Paramétrage des Labels
+        photo_drapeau_bleu = Image.open(".\Images\Images_Renommee\Drapeau_Bleu.png")
+        taille = (95 , 110)
+        photo_drapeau_bleu = photo_drapeau_bleu.resize(taille)
+        self.photoImage_drapeau_bleu = ImageTk.PhotoImage(photo_drapeau_bleu)
+
+        photo_drapeau_rouge = Image.open(".\Images\Images_Renommee\Drapeau_Rouge.png")
+        photo_drapeau_rouge = photo_drapeau_rouge.resize(taille)
+        self.photoImage_drapeau_rouge = ImageTk.PhotoImage(photo_drapeau_rouge)
+
+        self.Label_drapeau_bleu.configure(image= self.photoImage_drapeau_bleu, bg="#818181")
+        self.Label_drapeau_rouge.configure(image= self.photoImage_drapeau_rouge, bg="#818181")
+
+        self.Label_titre.configure(text= "Classique", font= "Arial, 50", bg= "#000000", fg="#ffffff")
+
+        self.Label_score_bleu.configure(text= "0", font= "Arial, 125", bg= "#4f4f4f", fg="#ffffff")
+        self.Label_score_tiret.configure(text= "-", font= "Arial, 125", bg= "#4f4f4f", fg="#ffffff")
+        self.Label_score_rouge.configure(text= "0", font= "Arial, 125", bg= "#4f4f4f", fg="#ffffff")
+
+        self.Label_texte_bleu.configure(text= "Equipe Bleue", font= "Arial, 28", bg= "#818181", fg="#ffffff")
+        self.Label_texte_rouge.configure(text= "Equipe Rouge", font= "Arial, 28", bg= "#818181", fg="#ffffff")
+
+        self.Label_chrono.configure(text= "00 : 00", font= "Arial, 150", bg= "#818181", fg="#ffffff")
+
 
         #Placement des Wigets
-        self.Bouton_retour.grid(row=0,column=0)
-        self.Label_titre.grid(row=0,column=1)
+        self.Bouton_retour.place(x=82 , y=62)
+        self.Label_titre.place(x=821.5 , y=64.81)
 
-        self.Bouton_moins_bleu.grid(row=0,column=0)
-        self.Bouton_plus_bleu.grid(row=0,column=1)
-        self.Label_score_bleu.grid(row=0,column=2)
-        self.Label_score_tiret.grid(row=0,column=3)
-        self.Label_score_rouge.grid(row=0,column=4)
-        self.Bouton_plus_rouge.grid(row=0,column=5)
-        self.Bouton_moins_rouge.grid(row=0,column=6)
+        self.Bouton_moins_bleu.place(x= 116, y= 33.5)
+        self.Bouton_plus_bleu.place(x= 308, y= 33.5)
+        self.Label_score_bleu.place(x= 628, y= 15)
+        self.Label_score_tiret.place(x= 760, y= 15)
+        self.Label_score_rouge.place(x= 864, y= 15)
+        #self.Bouton_plus_rouge.place(x= 308, y= 33.5)
+        #self.Bouton_moins_rouge.place(x= 308, y= 33.5)
 
-        self.Label_minutes.grid(row=0,column=0)
-        self.Label_chrono_tiret.grid(row=0,column=0)
-        self.Label_secondes.grid(row=0,column=0)
+        self.Label_chrono.place(x= 668.87, y= 0)
+
+        self.Label_drapeau_bleu.grid(row=0,column=0)
+        self.Label_texte_bleu.grid(row=0,column=1)
+        self.Label_drapeau_rouge.grid(row=0,column=3)
+        self.Label_texte_rouge.grid(row=0,column=2)
 
         self.Bouton_debut.pack()
-     
+
         #Placement de la fenêtre
         #self.page.mainloop()
 
