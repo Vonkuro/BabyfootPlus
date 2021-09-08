@@ -1,5 +1,7 @@
 Menu des différents modes de jeux
 
+Tous les textes sont écrit en : Arial, Regular
+
 Résolution : 
 -	1920 par 1080p
 
