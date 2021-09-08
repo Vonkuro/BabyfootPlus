@@ -15,6 +15,7 @@ Ligne Verte :
 Encadré gris :
 
 -	L : 1920px, H : 880 px, X : 0 px, Y : 200 px et Couleur : 818181
+
 Mode Classique :
 
 - 	L : 300 px, H : 400 px, X : 93 px et Y : 415 px
