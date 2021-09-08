@@ -115,4 +115,4 @@ Bouton Recommencer :
 
 
 
-Page pour Arreter ou mettre en pause la partie : (Soon)
+Page pour Arreter ou mettre en pause la partie : (Bientôt)
