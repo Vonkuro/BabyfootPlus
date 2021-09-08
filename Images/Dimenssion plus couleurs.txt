@@ -47,4 +47,72 @@ Mode But :
 
 Page pour commencer la partie :
 
+Résolution : 
 
+-	1920 px par 1080 px
+
+Encadré noir :
+
+-	L : 1920 px, H : 200 px, X : 0 px, Y : 0 px et Couleur : 000000
+
+Ligne Verte :
+
+-	L : 1920 px, H : 10 px, X : 0 px, Y : 200 px et Couleur : 2aff00
+
+Encadré gris :
+
+-	L : 1920px, H : 880 px, X : 0 px, Y : 200 px et Couleur : 818181
+
+Compteur de points :
+
+-	L : 1574 px, H : 209 px, X : 173 px, Y : 244,5 px, Couleur de fond : 4f4f4f et Couleur du contour : 000000
+
+Premier moins rouge :
+
+-	L : 126 px, H : 126 px, X : 289 px, Y : 278 px
+
+Premier plus vert : 
+
+-	L : 126 px, H : 126 px, X : 481 px, Y : 278 px
+
+Texte Compteur de Points : 
+
+-	L : 1574 px, H : 209 px, X : 173 px, Y : 244,5 px, Arial, Regular, 500 pt et Couleur : ffffff
+
+Deuxieme moins rouge : 
+
+-	L : 126 px, H : 126 px, X : 1313 px, Y : 278 px
+
+Deuxieme plus vert : 
+
+-	L : 126 px, H : 126 px, X : 1505 px, Y : 278 px
+
+Drapeau bleu :
+
+-	L : 95 px, H : 110 px, X : 290 px, Y : 480 px
+
+
+Equipe bleu : 
+
+-	L : 195 px, H : 38,85 px, X : 475 px, Y : 514,87 px, Arial, Regular, 110 pt et Couleur : ffffff
+
+Drapeau rouge : 
+
+-	L : 95 px, H : 110px, X : 1535 px, Y : 480 px
+
+Equipe rouge : 
+
+-	L : 195 px, H : 38,85 px, X : 1250 px, Y : 514,87 px, Arial, Regular, 110 pt et Couleur : ffffff
+
+Timer :
+
+-	L : 581,76 px, H : 211,93 px, X : 668,87 px, Y : 619,81 px, Arial, Regular, 600 pt et Couleur : ffffff
+
+Bouton Recommencer :
+
+-	L : 1513 px, H : 126 px, X : 204 px, Y : 866 px
+
+
+
+
+Page pour Arreter ou mettre en pause la partie : (Soon)
