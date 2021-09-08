@@ -33,19 +33,31 @@ class Menu():
         self.intervale_texte.configure(width=613.56, bg="#818181")
         self.intervale_texte.pack_propagate(0)
 
-        self.boutons.configure(bg="#818181")
+        self.boutons.configure(width=1920, bg="#818181")
 
-        self.intervale1.configure(width=93, bg="#818181")
+        self.intervale1.configure(width=84.75, bg="#818181")
         self.intervale1.pack_propagate(0)
 
+        self.intervale2.configure(width=178, bg="#818181")
+        self.intervale2.pack_propagate(0)
+
+        self.intervale3.configure(width=178, bg="#818181")
+        self.intervale3.pack_propagate(0)
+
+        self.intervale4.configure(width=178, bg="#818181")
+        self.intervale4.pack_propagate(0)
+
         #Placement des Frames
-        self.titre.pack()
-        self.trait.pack()
-        self.corps.pack()
+        self.titre.grid(row=0, column=0)
+        self.trait.grid(row=1, column=0)
+        self.corps.grid(row=2, column=0)
         self.textes.place(x=0, y=55)
         self.intervale_texte.grid(row=0, column=0)
         self.boutons.place(x=0, y=205)
         self.intervale1.grid(row=0, column=0)
+        self.intervale2.grid(row=0, column=2)
+        self.intervale3.grid(row=0, column=4)
+        self.intervale4.grid(row=0, column=6)
 
         #Définition des Boutons
         self.Bouton_classique = tk.Button(master= self.boutons)
@@ -60,17 +72,17 @@ class Menu():
         photo_classique = photo_classique.resize(taille)
         self.photoImage_classique = ImageTk.PhotoImage(photo_classique)
 
-        photo_chrono = Image.open(".\Images\Images_Renommee\Mode_Babyfoot.png")
+        photo_chrono = Image.open(".\Images\Images_Renommee\Mode_Chrono.png")
         taille = (300 , 400)
         photo_chrono = photo_chrono.resize(taille)
         self.photoImage_chrono = ImageTk.PhotoImage(photo_chrono)
 
-        photo_chrono_plus_temps = Image.open(".\Images\Images_Renommee\Mode_Babyfoot.png")
+        photo_chrono_plus_temps = Image.open(".\Images\Images_Renommee\Mode_Chrono_Deux.png")
         taille = (300 , 400)
         photo_chrono_plus_temps = photo_chrono_plus_temps.resize(taille)
         self.photoImage_chrono_plus_temps = ImageTk.PhotoImage(photo_chrono_plus_temps)
 
-        photo_chrono_plus_but = Image.open(".\Images\Images_Renommee\Mode_Babyfoot.png")
+        photo_chrono_plus_but = Image.open(".\Images\Images_Renommee\Mode_But.png")
         taille = (300 , 400)
         photo_chrono_plus_but = photo_chrono_plus_but.resize(taille)
         self.photoImage_chrono_plus_but = ImageTk.PhotoImage(photo_chrono_plus_but)
