@@ -227,6 +227,7 @@ def chrono_but():
 
     while temps<600:
         temps = time.time() - debut
+        print(valeurbut)
         print ('Waiting a few seconds for the sensor to settle')
         time.sleep(0.01)
         GPIO.output(TRIG1, True)
@@ -259,14 +260,14 @@ def chrono_but():
         print ('Distance 1:',distance1,'cm')
         print ('Distance 2:',distance2,'cm')
         if distance1<20:
-            valeurbut = valeurbut + 1
             but1 = but1 + valeurbut
             time.sleep(1)
+            valeurbut = valeurbut + 1
             print('but bleu')
         if distance2<20:
-            valeurbut = valeurbut + 1
             but2 = but2 + valeurbut
             time.sleep(1)
+            valeurbut = valeurbut + 1
             print('but rouge')
     GPIO.cleanup()
     print('Nombre de buts rouge : ', but1, ' et nombre de buts bleu : ' , but2)
