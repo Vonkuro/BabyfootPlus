@@ -21,7 +21,6 @@ menu.Bouton_chrono_plus_but.configure(command=lambda: versChronoBut(menu,jeu))
 jeu.Bouton_retour.configure(command=lambda: versMenu(jeu, menu))
 
 #jeu
-jeu.Bouton_debut.configure(command=lambda: debutPartie(jeu))
 jeu.Bouton_pause.configure(command=lambda: pausePartie(jeu))
 jeu.Bouton_relance.configure(command=lambda: relancePartie(jeu))
 jeu.Bouton_arret.configure(command=lambda: arretPartie(jeu))

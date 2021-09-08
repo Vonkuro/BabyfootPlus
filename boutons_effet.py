@@ -1,3 +1,5 @@
+from Capteur import *
+from modeJeu import ModeClassique
 from Page_Choix import *
 from Page_Jeu import *
 
@@ -7,26 +9,50 @@ from Page_Jeu import *
 
 def versClassique(menu : Menu, classique: EnJeu):
     menu.cache()
+
+    #Titre
     classique.Label_titre.configure(text= "Classique", font= "Arial, 50", bg= "#000000", fg="#ffffff")
     classique.Label_titre.place(x=821.5 , y=64.81)
+    
+    #configure le mode de jeu demandé : Bouton commencer la partie
+    classique.Bouton_debut.configure(command=lambda:debutPartie(classique, "classique"))
+    
     classique.affiche()
 
 def versChrono(menu: Menu, chrono: EnJeu):
     menu.cache()
+    
+    #Titre
     chrono.Label_titre.configure(text= "Chrono", font= "Arial, 50", bg= "#000000", fg="#ffffff")
     chrono.Label_titre.place(x=821.5 , y=64.81)
+    
+    #configure le mode de jeu demandé : Bouton commencer la partie
+    chrono.Bouton_debut.configure(command=lambda:debutPartie(chrono, "chrono"))
+ 
     chrono.affiche()
 
 def versChronoTemps(menu: Menu, chronoTemps: EnJeu):
     menu.cache()
+    
+    #Titre
     chronoTemps.Label_titre.configure(text= "Chrono 10 min", font= "Arial, 50", bg= "#000000", fg="#ffffff")
     chronoTemps.Label_titre.place(x=821.5 , y=64.81)
+    
+    #configure le mode de jeu demandé : Bouton commencer la partie
+    chronoTemps.Bouton_debut.configure(command=lambda:debutPartie(chronoTemps, "chronoTemps"))
+
     chronoTemps.affiche()
 
 def versChronoBut(menu: Menu, chronoBut: EnJeu):
     menu.cache()
+    
+    #Titre
     chronoBut.Label_titre.configure(text= "Chrone buts", font= "Arial, 50", bg= "#000000", fg="#ffffff")
     chronoBut.Label_titre.place(x=821.5 , y=64.81)
+
+    #configure le mode de jeu demandé : Bouton commencer la partie
+    chronoBut.Bouton_debut.configure(command=lambda:debutPartie(chronoBut, "chronoBut"))
+    
     chronoBut.affiche()
 
 #bouton de retour (flèche en arriere)
@@ -40,12 +66,24 @@ def versMenu(enJeu: EnJeu, menu: Menu):
 #Bouton pour démarrer la partie 
 #disparition : bouton retour(flèche en arriere) et bouton debut
 #apparition : bouton arret et bouton pause
-def debutPartie(enJeu: EnJeu):
+def debutPartie(enJeu: EnJeu, mode):
+    
     enJeu.Bouton_retour.place_forget()
     enJeu.Bouton_debut.place_forget()
     
     enJeu.Bouton_arret.place(x=203,y=0)
     enJeu.Bouton_pause.place(x=1069,y=0)
+
+    if mode=="classique":
+        ModeClassique(enJeu)
+    elif mode=="chrono":
+        chrono(enJeu)
+    elif mode=="chronoTemps":
+        chrono_temps(enJeu)
+    elif mode=="chronoBut":
+        chrono_but(enJeu)
+    else:
+        print("impossible")
 
 #Bouton de pause
 #Bouton pause devient Bouton relance

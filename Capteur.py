@@ -1,3 +1,4 @@
+from Page_Jeu import EnJeu
 import RPi.GPIO as GPIO
 import time
 
@@ -60,7 +61,7 @@ def but():
     GPIO.cleanup()
     return but
 
-def chrono():
+def chrono(enJeu: EnJeu):
     debut = time.time()
     temps = time.time() - debut
 
@@ -128,7 +129,7 @@ def chrono():
     GPIO.cleanup()
     print('Nombre de buts rouge : ', but1, ' et nombre de buts bleu : ' , but2)
 
-def chrono_temps():
+def chrono_temps(enJeu: EnJeu):
     debut = time.time()
     temps = time.time() - debut
 
@@ -199,7 +200,7 @@ def chrono_temps():
     print('Nombre de buts rouge : ', but1, ' et nombre de buts bleu : ' , but2)
 
 
-def chrono_but():
+def chrono_but(enJeu: EnJeu):
     debut = time.time()
     temps = time.time() - debut
 
