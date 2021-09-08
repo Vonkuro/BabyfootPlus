@@ -186,7 +186,7 @@ def chrono_temps():
         
         print ('Distance 1:',distance1,'cm')
         print ('Distance 2:',distance2,'cm')
-        valeurbut = int(temps/60)
+        valeurbut = 1 + int(temps/60)
         if distance1<20:
             but1 = but1 + valeurbut
             time.sleep(1)
