@@ -39,13 +39,17 @@ class EnJeu():
         self.score.pack_propagate(0)
         self.score.grid_propagate(0)
 
-        self.equipe.configure(bg="#818181")
-        #self.equipe.pack_propagate(0)
-        #self.equipe.grid_propagate(0)
+        self.equipe.configure(width=1920, height=120, bg="#818181")
+        self.equipe.pack_propagate(0)
+        self.equipe.grid_propagate(0)
 
         self.chrono.configure(width=1920, height=211.93, bg="#818181")
         self.chrono.pack_propagate(0)
         self.chrono.grid_propagate(0)
+
+        self.boutons.configure(width=1920, height=126, bg="#818181")
+        self.boutons.pack_propagate(0)
+        self.boutons.grid_propagate(0)
 
 
         #Placement des Frames
@@ -56,7 +60,7 @@ class EnJeu():
         self.equipe.place(x=0,y= 270.5)
         self.chrono.place(x=0,y= 409.81)
 
-        self.boutons.place(x=0,y= 756)
+        self.boutons.place(x=0,y= 660)
 
         #Définition des Boutons
         self.Bouton_retour = tk.Button(master= self.titre)
@@ -177,17 +181,17 @@ class EnJeu():
         self.Label_score_bleu.place(x= 628, y= 15)
         self.Label_score_tiret.place(x= 760, y= 15)
         self.Label_score_rouge.place(x= 864, y= 15)
-        #self.Bouton_plus_rouge.place(x= 308, y= 33.5)
-        #self.Bouton_moins_rouge.place(x= 308, y= 33.5)
+        self.Bouton_plus_rouge.place(x= 1140, y= 33.5)
+        self.Bouton_moins_rouge.place(x= 1332, y= 33.5)
 
         self.Label_chrono.place(x= 668.87, y= 0)
 
-        self.Label_drapeau_bleu.grid(row=0,column=0)
-        self.Label_texte_bleu.grid(row=0,column=1)
-        self.Label_drapeau_rouge.grid(row=0,column=3)
-        self.Label_texte_rouge.grid(row=0,column=2)
+        self.Label_drapeau_bleu.place(x= 290, y= 0)
+        self.Label_texte_bleu.place(x= 475, y= 34.37)
+        self.Label_drapeau_rouge.place(x= 1535, y= 0)
+        self.Label_texte_rouge.place(x= 1250, y= 34.37)
 
-        self.Bouton_debut.pack()
+        self.Bouton_debut.place(x=204,y=0)
 
         #Placement de la fenêtre
         #self.page.mainloop()
