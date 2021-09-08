@@ -55,6 +55,14 @@ Encadré noir :
 
 -	L : 1920 px, H : 200 px, X : 0 px, Y : 0 px et Couleur : 000000
 
+Flêche Blanche Retour :
+
+-	L : 91 px, H : 77 px, X : 82 px, Y : 62 px
+
+Titre Encadré Noir : 
+
+-	L : 277 px, H : 70,64 px, X : 821,5 px, Y : 64,81 px, Arial, Regular, 200 pt et Couleur : ffffff
+
 Ligne Verte :
 
 -	L : 1920 px, H : 10 px, X : 0 px, Y : 200 px et Couleur : 2aff00
