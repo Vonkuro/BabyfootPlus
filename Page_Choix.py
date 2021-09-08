@@ -45,7 +45,7 @@ class Menu():
 
         #Paramétrage des Boutons
             #Images
-        photo_classique = Image.open("D:\EPSI-Volumineux\Test git\BabyfootPlus\Images\Images\Babyfoot_blanc.png")
+        photo_classique = Image.open(".\Images\Images\Babyfoot_blanc.png")
         photo_classique = ImageTk.PhotoImage(photo_classique)
         self.Bouton_classique.configure(image= photo_classique, bg="#4f4f4f")
         #Définition des Labels
