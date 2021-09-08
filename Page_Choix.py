@@ -45,9 +45,11 @@ class Menu():
 
         #Paramétrage des Boutons
             #Images
-        photo_classique = Image.open(".\Images\Images\Babyfoot_blanc.png")
-        photo_classique = ImageTk.PhotoImage(photo_classique)
-        self.Bouton_classique.configure(image= photo_classique, bg="#4f4f4f")
+        photo_classique = Image.open(".\Images\Images_Renommee\Babyfoot.png")
+        
+        self.photoImage_classique = ImageTk.PhotoImage(photo_classique)
+        
+        self.Bouton_classique.configure(image= self.photoImage_classique, bg= "#4f4f4f")
         #Définition des Labels
         self.Label_titre = tk.Label(master= self.titre)
         self.Label_bonjour = tk.Label(master= self.textes)
