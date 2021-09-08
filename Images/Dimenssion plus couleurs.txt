@@ -2,7 +2,7 @@ Menu des différents modes de jeux
 
 Résolution : 
 
--	1920 par 1080p
+-	1920 px par 1080 px
 
 Encadré noir :
 
@@ -87,6 +87,14 @@ Texte Compteur de Points :
 
 -	L : 1574 px, H : 209 px, X : 173 px, Y : 244,5 px, Arial, Regular, 500 pt et Couleur : ffffff
 
+0 de gauche :
+
+-	L : 80 px, H : 110 px, X : 801 px, Y : 300 px
+
+Tiret entre les deux 0 : 
+
+-	L : 50 px, H : 20 px, X : 933 px, Y : 359 px
+
 Deuxieme moins rouge : 
 
 -	L : 126 px, H : 126 px, X : 1313 px, Y : 278 px
@@ -119,6 +127,7 @@ Timer :
 Bouton Recommencer :
 
 -	L : 1513 px, H : 126 px, X : 204 px, Y : 866 px
+
 
 
 
@@ -162,6 +171,18 @@ Texte Compteur de Points :
 
 -	L : 1574 px, H : 209 px, X : 173 px, Y : 244,5 px, Arial, Regular, 500 pt et Couleur : ffffff
 
+0 de gauche :
+
+-	L : 80 px, H : 110 px, X : 801 px, Y : 300 px
+
+Tiret entre les deux 0 : 
+
+-	L : 50 px, H : 20 px, X : 933 px, Y : 359 px
+
+0 de droite :
+
+-	L : 77 px, H : 110 px, X : 1037 px, Y : 300 px
+
 Deuxieme moins rouge : 
 
 -	L : 126 px, H : 126 px, X : 1313 px, Y : 278 px
@@ -198,5 +219,4 @@ Bouton Arrêter la partie :
 Bouton Mettre en pause la partie : 
 
 -	L : 648 px, H : 126 px, X : 1069 px, Y : 866 px
-
 
