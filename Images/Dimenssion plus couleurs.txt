@@ -8,6 +8,10 @@ Encadré noir :
 
 -	L : 1920 px, H : 200 px, X : 0 px, Y : 0 px et Couleur : 000000
 
+Titre Encadré noir :
+
+-	L : 928 px, H : 142,31 px, X : 495,5 px, Y : 65,12 px, Arial, Regular, 200 pt et Couleur : ffffff
+
 Ligne Verte :
 
 -	L : 1920 px, H : 10 px, X : 0 px, Y : 200 px et Couleur : 2aff00
@@ -15,6 +19,10 @@ Ligne Verte :
 Encadré gris :
 
 -	L : 1920px, H : 880 px, X : 0 px, Y : 200 px et Couleur : 818181
+
+Texte Encadré gris : 
+
+-	L : 692,29 px, H : 35,32 px, X : 613,56 px, Y : 270 px, Arial, Regular, 100 pt et Couleur : ffffff
 
 Mode Classique :
 
