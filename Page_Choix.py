@@ -45,20 +45,23 @@ class Menu():
 
         #Paramétrage des Boutons
             #Images
-        photo_classique = Image.open(".\Images\Images_Renommee\Babyfoot.png")
+        photo_classique = Image.open(".\Images\Images_Renommee\Mode_Babyfoot.png")
         
         self.photoImage_classique = ImageTk.PhotoImage(photo_classique)
         
         self.Bouton_classique.configure(image= self.photoImage_classique, bg= "#4f4f4f")
+
         #Définition des Labels
         self.Label_titre = tk.Label(master= self.titre)
         self.Label_bonjour = tk.Label(master= self.textes)
         
         #Paramétrage des Labels
+        self.Label_titre.configure(text= "Menu des différents modes de jeux", font= "Arial, 50", bg= "#000000", fg="#ffffff")
+        self.Label_bonjour.configure(text= "Bienvenue dans l'application connectée du Babyfoot", font= "Arial, 10", bg= "#818181", fg="#ffffff")
 
         #Placement des Wigets
-        self.Label_titre.pack()
-        self.Label_bonjour.pack()
+        self.Label_titre.place(x=495.5, y=65.12)
+        self.Label_bonjour.place(x=613.4, y=270)
         self.Bouton_classique.grid(row=0, column=0)
         self.Bouton_chrono.grid(row=0, column=1)
         self.Bouton_chrono_plus_temps.grid(row=0, column=2)
