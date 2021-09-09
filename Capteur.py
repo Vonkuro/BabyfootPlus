@@ -26,7 +26,7 @@ def classique(enJeu: EnJeu, ecran: Tk):
     
     while (score_bleu < 10 and score_rouge < 10):
         temps = time.time() - debut
-        if nouveauTemps==int(temps):
+        if nouveauTemps<=int(temps):
             nouveauTemps=nouveauTemps+1
             seconde_chrono = int(temps)%60
             minute_chrono = int(temps)/60
