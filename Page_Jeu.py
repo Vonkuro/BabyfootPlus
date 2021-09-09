@@ -184,12 +184,12 @@ class EnJeu():
         self.Bouton_plus_rouge.place(x= 1140, y= 33.5)
         self.Bouton_moins_rouge.place(x= 1332, y= 33.5)
 
-        self.Label_chrono.place(x= 668.87, y= 0)
+        self.Label_chrono.place(x= 655, y= 0)
 
         self.Label_drapeau_bleu.place(x= 290, y= 0)
         self.Label_texte_bleu.place(x= 475, y= 34.37)
         self.Label_drapeau_rouge.place(x= 1535, y= 0)
-        self.Label_texte_rouge.place(x= 1250, y= 34.37)
+        self.Label_texte_rouge.place(x= 1200, y= 34.37)
 
         self.Bouton_debut.place(x=204,y=0)
 
