@@ -1,4 +1,5 @@
 #from Capteur import *
+from Capteur import Pause
 from Page_Choix import *
 from Page_Jeu import *
 import tkinter as Tk
@@ -67,13 +68,17 @@ def versMenu(enJeu: EnJeu, menu: Menu):
 #disparition : bouton retour(flèche en arriere) et bouton debut
 #apparition : bouton arret et bouton pause
 def debutPartie(enJeu: EnJeu, mode, ecran):
-    
+    global Pause
+
     enJeu.Bouton_retour.place_forget()
     enJeu.Bouton_debut.place_forget()
     
     enJeu.Bouton_arret.place(x=203,y=0)
     enJeu.Bouton_pause.place(x=1069,y=0)
     ecran.update()
+    
+    Pause = False
+
 """
     if mode=="classique":
         classique(enJeu, ecran)
@@ -89,20 +94,29 @@ def debutPartie(enJeu: EnJeu, mode, ecran):
 #Bouton de pause
 #Bouton pause devient Bouton relance
 def pausePartie(enJeu: EnJeu, ecran: Tk):
+    global Pause
+
     print("c'est la pause")
     enJeu.Bouton_pause.place_forget()
     
     enJeu.Bouton_relance.place(x=1069,y=0)
+
+    Pause = True
+
     ecran.update()
     
 
 #Bouton de relance
 #Bouton relance devient Bouton pause
 def relancePartie(enJeu: EnJeu, ecran: Tk):
+    global Pause
     print("c'est reparti")
     enJeu.Bouton_relance.place_forget()
     
     enJeu.Bouton_pause.place(x=1069,y=0)
+    
+    Pause = False
+
     ecran.update()
 
 #Bouton arret de partie
