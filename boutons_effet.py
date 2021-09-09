@@ -1,5 +1,4 @@
-#from Capteur import *
-from Capteur import Pause
+import Capteur
 from Page_Choix import *
 from Page_Jeu import *
 import tkinter as Tk
@@ -89,7 +88,6 @@ def versMenu(enJeu: EnJeu, menu: Menu):
 #disparition : bouton retour(flèche en arriere) et bouton debut
 #apparition : bouton arret et bouton pause
 def debutPartie(enJeu: EnJeu, mode, ecran):
-    global Pause
 
     enJeu.Bouton_retour.place_forget()
     enJeu.Bouton_debut.place_forget()
@@ -98,31 +96,29 @@ def debutPartie(enJeu: EnJeu, mode, ecran):
     enJeu.Bouton_pause.place(x=1069,y=0)
     ecran.update()
     
-    Pause = False
+    Capteur.Pause = False
 
-"""
     if mode=="classique":
-        classique(enJeu, ecran)
+        Capteur.classique(enJeu, ecran)
     elif mode=="chrono":
-        chrono(enJeu, ecran)
+        Capteur.chrono(enJeu, ecran)
     elif mode=="chronoTemps":
-        chrono_temps(enJeu, ecran)
+        Capteur.chrono_temps(enJeu, ecran)
     elif mode=="chronoBut":
-        chrono_but(enJeu, ecran)
+        Capteur.chrono_but(enJeu, ecran)
     else:
         print("impossible")
-"""
+
 #Bouton de pause
 #Bouton pause devient Bouton relance
 def pausePartie(enJeu: EnJeu, ecran: Tk):
-    global Pause
 
     print("c'est la pause")
     enJeu.Bouton_pause.place_forget()
     
     enJeu.Bouton_relance.place(x=1069,y=0)
 
-    Pause = True
+    Capteur.Pause = True
 
     ecran.update()
     
@@ -130,13 +126,12 @@ def pausePartie(enJeu: EnJeu, ecran: Tk):
 #Bouton de relance
 #Bouton relance devient Bouton pause
 def relancePartie(enJeu: EnJeu, ecran: Tk):
-    global Pause
     print("c'est reparti")
     enJeu.Bouton_relance.place_forget()
     
     enJeu.Bouton_pause.place(x=1069,y=0)
     
-    Pause = False
+    Capteur.Pause = False
 
     ecran.update()
 

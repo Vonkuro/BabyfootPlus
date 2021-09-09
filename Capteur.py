@@ -3,6 +3,8 @@ import RPi.GPIO as GPIO
 import time
 import tkinter as Tk
 
+Pause = False
+
 def numberToString(number: int):
     if number<=9:
         return "0"+str(number)
@@ -166,12 +168,13 @@ def chrono(enJeu: EnJeu, ecran: Tk):
     score_bleu = 0
     score_rouge = 0
     nouveauTemps=0
+    Temps_Pause = 0.0
 
     while temps<600:
         if Pause :
-            time.sleep(0.05)
+            Temps_Pause = time.time() - temps
         else :
-            temps = time.time() - debut
+            temps = time.time() - debut - Temps_Pause
             if int(temps)>=nouveauTemps:
                 nouveauTemps=nouveauTemps+1
                 chronoActuel=600-int(temps)
