@@ -21,9 +21,9 @@ menu.Bouton_chrono_plus_but.configure(command=lambda: versChronoBut(menu,jeu, ec
 jeu.Bouton_retour.configure(command=lambda: versMenu(jeu, menu))
 
 #jeu
-jeu.Bouton_pause.configure(command=lambda: pausePartie(jeu))
-jeu.Bouton_relance.configure(command=lambda: relancePartie(jeu))
-jeu.Bouton_arret.configure(command=lambda: arretPartie(jeu))
+jeu.Bouton_pause.configure(command=lambda: pausePartie(jeu, ecran))
+jeu.Bouton_relance.configure(command=lambda: relancePartie(jeu, ecran))
+jeu.Bouton_arret.configure(command=lambda: arretPartie(jeu, ecran))
 """
 jeu.Bouton_moins_bleu.configure(command=lambda: moinsBleu(jeu))
 jeu.Bouton_plus_bleu.configure(command=lambda: plusBleu(jeu))
