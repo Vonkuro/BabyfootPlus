@@ -99,7 +99,9 @@ def debutPartie(enJeu: EnJeu, mode, ecran):
     
     enJeu.Bouton_arret.place(x=203,y=0)
     enJeu.Bouton_pause.place(x=1069,y=0)
-    
+
+    enJeu.Label_score_rouge.configure(text="00")
+    enJeu.Label_score_bleu.configure(text="00")
     
     Capteur.Pause = False
 
