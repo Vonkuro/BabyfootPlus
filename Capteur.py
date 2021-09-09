@@ -35,7 +35,7 @@ def classique(enJeu: EnJeu, ecran: Tk):
         if nouveauTemps<=int(temps):
             nouveauTemps=nouveauTemps+1
             seconde_chrono = int(temps)%60
-            minute_chrono = int(temps)/60
+            minute_chrono = int(temps/60)
             label_seconde= numberToString(seconde_chrono)
             label_minute= numberToString(minute_chrono)
             label_chrono= str(label_minute)+ " : " + str(label_seconde)
