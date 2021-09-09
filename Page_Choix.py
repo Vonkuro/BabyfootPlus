@@ -35,23 +35,23 @@ class Menu():
 
         self.boutons.configure(width=1920, bg="#818181")
 
-        self.intervale1.configure(width=84.75, bg="#818181")
+        self.intervale1.configure(width=84.75, bg="#818181") #Placement
         self.intervale1.pack_propagate(0)
 
-        self.intervale2.configure(width=178, bg="#818181")
+        self.intervale2.configure(width=178, bg="#818181") #Placement
         self.intervale2.pack_propagate(0)
 
-        self.intervale3.configure(width=178, bg="#818181")
+        self.intervale3.configure(width=178, bg="#818181") #Placement
         self.intervale3.pack_propagate(0)
 
-        self.intervale4.configure(width=178, bg="#818181")
+        self.intervale4.configure(width=178, bg="#818181") #Placement
         self.intervale4.pack_propagate(0)
 
         #Placement des Frames
         self.titre.grid(row=0, column=0)
         self.trait.grid(row=1, column=0)
         self.corps.grid(row=2, column=0)
-        self.textes.place(x=0, y=55)
+        self.textes.place(x=-25, y=55)
         self.intervale_texte.grid(row=0, column=0)
         self.boutons.place(x=0, y=205)
         self.intervale1.grid(row=0, column=0)
@@ -100,7 +100,7 @@ class Menu():
         self.Label_bonjour.configure(text= "Bienvenue dans l'application connectée du Babyfoot", font= "Arial, 25", bg= "#818181", fg="#ffffff")
 
         #Placement des Wigets
-        self.Label_titre.place(x=495.5, y=65.12)
+        self.Label_titre.place(x=430, y=65.12)
         self.Label_bonjour.grid(row=0, column=1)
         self.Bouton_classique.grid(row=0, column=1)
         self.Bouton_chrono.grid(row=0, column=3)
