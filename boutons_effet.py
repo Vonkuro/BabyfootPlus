@@ -22,6 +22,7 @@ def versClassique(menu : Menu, classique: EnJeu, ecran: Tk):
 
     #configure le mode de jeu demandé : Bouton commencer la partie
     classique.Bouton_debut.configure(command=lambda:debutPartie(classique, "classique", ecran))
+    classique.Bouton_relance.configure(command=lambda: relancePartie(classique, "classique", ecran))
     
     classique.affiche()
 
@@ -58,6 +59,7 @@ def versChronoTemps(menu: Menu, chronoTemps: EnJeu, ecran: Tk):
 
     #configure le mode de jeu demandé : Bouton commencer la partie
     chronoTemps.Bouton_debut.configure(command=lambda:debutPartie(chronoTemps, "chronoTemps", ecran))
+    chronoTemps.Bouton_relance.configure(command=lambda: relancePartie(chronoTemps, "chronoTemps", ecran))
 
     chronoTemps.affiche()
 
@@ -75,6 +77,7 @@ def versChronoBut(menu: Menu, chronoBut: EnJeu, ecran: Tk):
 
     #configure le mode de jeu demandé : Bouton commencer la partie
     chronoBut.Bouton_debut.configure(command=lambda:debutPartie(chronoBut, "chronoBut", ecran))
+    chronoBut.Bouton_relance.configure(command=lambda: relancePartie(chronoBut, "chronoBut", ecran))
     
     chronoBut.affiche()
 
