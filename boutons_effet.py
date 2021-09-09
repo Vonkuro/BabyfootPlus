@@ -2,12 +2,13 @@
 #from modeJeu import ModeClassique
 from Page_Choix import *
 from Page_Jeu import *
+import tkinter as Tk
 
 # ----- Changement des écrans
 
 #les quatres modes de jeu
 
-def versClassique(menu : Menu, classique: EnJeu):
+def versClassique(menu : Menu, classique: EnJeu, ecran: Tk):
     menu.cache()
 
     #Titre
@@ -15,11 +16,11 @@ def versClassique(menu : Menu, classique: EnJeu):
     classique.Label_titre.place(x=821.5 , y=64.81)
     
     #configure le mode de jeu demandé : Bouton commencer la partie
-    classique.Bouton_debut.configure(command=lambda:debutPartie(classique, "classique"))
+    classique.Bouton_debut.configure(command=lambda:debutPartie(classique, "classique", ecran))
     
     classique.affiche()
 
-def versChrono(menu: Menu, chrono: EnJeu):
+def versChrono(menu: Menu, chrono: EnJeu, ecran: Tk):
     menu.cache()
     
     #Titre
@@ -27,11 +28,11 @@ def versChrono(menu: Menu, chrono: EnJeu):
     chrono.Label_titre.place(x=821.5 , y=64.81)
     
     #configure le mode de jeu demandé : Bouton commencer la partie
-    chrono.Bouton_debut.configure(command=lambda:debutPartie(chrono, "chrono"))
+    chrono.Bouton_debut.configure(command=lambda:debutPartie(chrono, "chrono", ecran))
  
     chrono.affiche()
 
-def versChronoTemps(menu: Menu, chronoTemps: EnJeu):
+def versChronoTemps(menu: Menu, chronoTemps: EnJeu, ecran: Tk):
     menu.cache()
     
     #Titre
@@ -39,11 +40,11 @@ def versChronoTemps(menu: Menu, chronoTemps: EnJeu):
     chronoTemps.Label_titre.place(x=821.5 , y=64.81)
     
     #configure le mode de jeu demandé : Bouton commencer la partie
-    chronoTemps.Bouton_debut.configure(command=lambda:debutPartie(chronoTemps, "chronoTemps"))
+    chronoTemps.Bouton_debut.configure(command=lambda:debutPartie(chronoTemps, "chronoTemps", ecran))
 
     chronoTemps.affiche()
 
-def versChronoBut(menu: Menu, chronoBut: EnJeu):
+def versChronoBut(menu: Menu, chronoBut: EnJeu, ecran: Tk):
     menu.cache()
     
     #Titre
@@ -51,7 +52,7 @@ def versChronoBut(menu: Menu, chronoBut: EnJeu):
     chronoBut.Label_titre.place(x=821.5 , y=64.81)
 
     #configure le mode de jeu demandé : Bouton commencer la partie
-    chronoBut.Bouton_debut.configure(command=lambda:debutPartie(chronoBut, "chronoBut"))
+    chronoBut.Bouton_debut.configure(command=lambda:debutPartie(chronoBut, "chronoBut", ecran))
     
     chronoBut.affiche()
 
@@ -66,68 +67,73 @@ def versMenu(enJeu: EnJeu, menu: Menu):
 #Bouton pour démarrer la partie 
 #disparition : bouton retour(flèche en arriere) et bouton debut
 #apparition : bouton arret et bouton pause
-def debutPartie(enJeu: EnJeu, mode):
+def debutPartie(enJeu: EnJeu, mode, ecran):
     
     enJeu.Bouton_retour.place_forget()
     enJeu.Bouton_debut.place_forget()
     
     enJeu.Bouton_arret.place(x=203,y=0)
     enJeu.Bouton_pause.place(x=1069,y=0)
+    ecran.update()
 """
     if mode=="classique":
-        ModeClassique(enJeu)
+        ModeClassique(enJeu, ecran)
     elif mode=="chrono":
-        chrono(enJeu)
+        chrono(enJeu, ecran)
     elif mode=="chronoTemps":
-        chrono_temps(enJeu)
+        chrono_temps(enJeu, ecran)
     elif mode=="chronoBut":
-        chrono_but(enJeu)
+        chrono_but(enJeu, ecran)
     else:
         print("impossible")
 """
 #Bouton de pause
 #Bouton pause devient Bouton relance
-def pausePartie(enJeu: EnJeu):
+def pausePartie(enJeu: EnJeu, ecran: Tk):
     print("c'est la pause")
     enJeu.Bouton_pause.place_forget()
     
     enJeu.Bouton_relance.place(x=1069,y=0)
+    ecran.update()
+    
 
 #Bouton de relance
 #Bouton relance devient Bouton pause
-def relancePartie(enJeu: EnJeu):
+def relancePartie(enJeu: EnJeu, ecran: Tk):
     print("c'est reparti")
     enJeu.Bouton_relance.place_forget()
     
     enJeu.Bouton_pause.place(x=1069,y=0)
+    ecran.update()
 
 #Bouton arret de partie
 #Bouton retour et Bouton début de partie apparaissent
 #Bouton arret et Bouton relance/pause disparaissent
-def arretPartie(enJeu: EnJeu):
+def arretPartie(enJeu: EnJeu, ecran: Tk):
     enJeu.Bouton_debut.place(x=204,y=0)
     enJeu.Bouton_retour.place(x=82 , y=62)
     
     enJeu.Bouton_arret.place_forget()
     enJeu.Bouton_relance.place_forget()
     enJeu.Bouton_pause.place_forget()
+    ecran.update()
     
 """
 #Bouton - bleu
 def moinsBleu(enJeu: EnJeu):
-    if enJeu.Label_score_bleu!=0:
-        enJeu.Label_score_bleu=enJeu.Label_score_bleu-1
+    #if enJeu.Label_score_bleu!=0:
+    #    enJeu.Label_score_bleu=enJeu.Label_score_bleu-1
 
 #Bouton + bleu
 def plusBleu(enJeu: EnJeu):
-    enJeu.Label_score_bleu=enJeu.Label_score_bleu+1
+    #enJeu.Label_score_bleu=enJeu.Label_score_bleu+1
 
 #Bouton - rouge
 def moinsRouge(enJeu: EnJeu):
-    if enJeu.Label_score_rouge!=0:
-        enJeu.Label_score_rouge=enJeu.Label_score_rouge-1
+    #if enJeu.Label_score_rouge!=0:
+    #    enJeu.Label_score_rouge=enJeu.Label_score_rouge-1
 
 #Bouton + rouge
 def plusRouge(enJeu: EnJeu):
-    enJeu.Label_score_rouge=enJeu.Label_score_rouge+1
+    #enJeu.Label_score_rouge=enJeu.Label_score_rouge+1
 """

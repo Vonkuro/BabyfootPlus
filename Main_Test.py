@@ -12,10 +12,10 @@ menu = Menu()
 jeu = EnJeu()
 
 #menu
-menu.Bouton_classique.configure(command=lambda: versClassique(menu,jeu))
-menu.Bouton_chrono.configure(command=lambda: versChrono(menu,jeu))
-menu.Bouton_chrono_plus_temps.configure(command=lambda: versChronoTemps(menu,jeu))
-menu.Bouton_chrono_plus_but.configure(command=lambda: versChronoBut(menu,jeu))
+menu.Bouton_classique.configure(command=lambda: versClassique(menu, jeu, ecran))
+menu.Bouton_chrono.configure(command=lambda: versChrono(menu,jeu, ecran))
+menu.Bouton_chrono_plus_temps.configure(command=lambda: versChronoTemps(menu,jeu, ecran))
+menu.Bouton_chrono_plus_but.configure(command=lambda: versChronoBut(menu,jeu, ecran))
 
 #retour vers le menu
 jeu.Bouton_retour.configure(command=lambda: versMenu(jeu, menu))

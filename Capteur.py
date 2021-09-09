@@ -1,6 +1,7 @@
 from Page_Jeu import EnJeu
 import RPi.GPIO as GPIO
 import time
+import tkinter as Tk
 
 def but():
     GPIO.setmode(GPIO.BCM)
@@ -20,7 +21,6 @@ def but():
     GPIO.output(TRIG2, False)
     but = 0
     while but == 0:
-        print ('Waiting a few seconds for the sensor to settle')
         time.sleep(0.01)
         GPIO.output(TRIG1, True)
         time.sleep(0.00001)
@@ -48,9 +48,6 @@ def but():
         pulse_duration2 = pulse_end2 - pulse_start2
         distance2 = pulse_duration2 * 17165
         distance2 = round(distance2, 1)
-        
-        print ('Distance 1:',distance1,'cm')
-        print ('Distance 2:',distance2,'cm')
 
         if distance1<20:
             but = 1
@@ -61,7 +58,7 @@ def but():
     GPIO.cleanup()
     return but
 
-def chrono(enJeu: EnJeu):
+def chrono(enJeu: EnJeu, ecran: Tk):
     debut = time.time()
     temps = time.time() - debut
 
@@ -83,10 +80,17 @@ def chrono(enJeu: EnJeu):
 
     but1 = 0
     but2 = 0
+    nouveauTemps=0
 
     while temps<600:
         temps = time.time() - debut
-        print ('Waiting a few seconds for the sensor to settle')
+        if int(temps)==nouveauTemps:
+            nouveauTemps=nouveauTemps+1
+            chronoActuel=600-int(temps)
+            seconde_chrono = chronoActuel%60
+            minute_chrono = int(chronoActuel/60)
+            label_chrono= str(minute_chrono)+ " : " + str(seconde_chrono)
+            enJeu.Label_chrono.configure(text=label_chrono)
         time.sleep(0.01)
         GPIO.output(TRIG1, True)
         time.sleep(0.00001)
@@ -115,23 +119,22 @@ def chrono(enJeu: EnJeu):
         distance2 = pulse_duration2 * 17165
         distance2 = round(distance2, 1)
         
-        print ('Distance 1:',distance1,'cm')
-        print ('Distance 2:',distance2,'cm')
-
         if distance1<20:
             but1 = but1 + 1
             enJeu.Label_score_bleu.configure(text=str(but1))
+            ecran.update()
             time.sleep(1)
             print('but bleu')
         if distance2<20:
             but2 = but2 + 1
             enJeu.Label_score_rouge.configure(text=str(but2))
+            ecran.update()
             time.sleep(1)
             print('but rouge')
     GPIO.cleanup()
     print('Nombre de buts rouge : ', but1, ' et nombre de buts bleu : ' , but2)
 
-def chrono_temps(enJeu: EnJeu):
+def chrono_temps(enJeu: EnJeu, ecran: Tk):
     debut = time.time()
     temps = time.time() - debut
 
@@ -193,18 +196,20 @@ def chrono_temps(enJeu: EnJeu):
         if distance1<20:
             but1 = but1 + valeurbut
             enJeu.Label_score_bleu.configure(text=str(but1))
+            ecran.update()
             time.sleep(1)
             print('but bleu')
         if distance2<20:
             but2 = but2 + valeurbut
             enJeu.Label_score_rouge.configure(text=str(but2))
+            ecran.update()
             time.sleep(1)
             print('but rouge')
     GPIO.cleanup()
     print('Nombre de buts rouge : ', but1, ' et nombre de buts bleu : ' , but2)
 
 
-def chrono_but(enJeu: EnJeu):
+def chrono_but(enJeu: EnJeu, ecran: Tk):
     debut = time.time()
     temps = time.time() - debut
 
@@ -267,12 +272,14 @@ def chrono_but(enJeu: EnJeu):
         if distance1<20:
             but1 = but1 + valeurbut
             enJeu.Label_score_bleu.configure(text=str(but1))
+            ecran.update()
             time.sleep(1)
             valeurbut = valeurbut + 1
             print('but bleu')
         if distance2<20:
             but2 = but2 + valeurbut
             enJeu.Label_score_rouge.configure(text=str(but2))
+            ecran.update()
             time.sleep(1)
             valeurbut = valeurbut + 1
             print('but rouge')
