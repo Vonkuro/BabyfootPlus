@@ -3,7 +3,7 @@ import RPi.GPIO as GPIO
 import time
 import tkinter as Tk
 
-def classique(enJeu, ecran):
+def classique(enJeu: EnJeu, ecran: Tk):
     GPIO.setmode(GPIO.BCM)
     GPIO.setwarnings(False)
     TRIG1 = 23
@@ -31,6 +31,7 @@ def classique(enJeu, ecran):
             seconde_chrono = int(temps)%60
             minute_chrono = int(temps)/60
             label_chrono= str(minute_chrono)+ " : " + str(seconde_chrono)
+            enJeu.Label_chrono.configure(text=label_chrono)
             ecran.update()
         time.sleep(0.01)
         GPIO.output(TRIG1, True)
