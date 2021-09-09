@@ -1,5 +1,4 @@
 #from Capteur import *
-#from modeJeu import ModeClassique
 from Page_Choix import *
 from Page_Jeu import *
 import tkinter as Tk

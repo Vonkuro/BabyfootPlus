@@ -61,19 +61,19 @@ def classique(enJeu, ecran):
         distance2 = round(distance2, 1)
         
         if distance1<20:
-            but1 = but1 + 1
-            enJeu.Label_score_bleu.configure(text=str(but1))
+            score_bleu = score_bleu + 1
+            enJeu.Label_score_bleu.configure(text=str(score_bleu))
             ecran.update()
             time.sleep(1)
             print('but bleu')
         if distance2<20:
-            but2 = but2 + 1
-            enJeu.Label_score_rouge.configure(text=str(but2))
+            score_rouge = score_rouge + 1
+            enJeu.Label_score_rouge.configure(text=str(score_rouge))
             ecran.update()
             time.sleep(1)
             print('but rouge')
     GPIO.cleanup()
-    print('Nombre de buts rouge : ', but1, ' et nombre de buts bleu : ' , but2)
+    print('Nombre de buts rouge : ', score_rouge, ' et nombre de buts bleu : ' , score_bleu)
 
 """
 def but():
@@ -157,7 +157,7 @@ def chrono(enJeu: EnJeu, ecran: Tk):
 
     while temps<600:
         temps = time.time() - debut
-        if int(temps)==nouveauTemps:
+        if int(temps)>=nouveauTemps:
             nouveauTemps=nouveauTemps+1
             chronoActuel=600-int(temps)
             seconde_chrono = chronoActuel%60
@@ -235,7 +235,7 @@ def chrono_temps(enJeu: EnJeu, ecran: Tk):
     nouveauTemps=0
     while temps<600:
         temps = time.time() - debut
-        if int(temps)==nouveauTemps:
+        if int(temps)>=nouveauTemps:
             nouveauTemps=nouveauTemps+1
             chronoActuel=600-int(temps)
             seconde_chrono = chronoActuel%60
@@ -314,7 +314,7 @@ def chrono_but(enJeu: EnJeu, ecran: Tk):
     nouveauTemps=0
     while temps<600:
         temps = time.time() - debut
-        if int(temps)==nouveauTemps:
+        if int(temps)>=nouveauTemps:
             nouveauTemps=nouveauTemps+1
             chronoActuel=600-int(temps)
             seconde_chrono = chronoActuel%60
@@ -367,5 +367,3 @@ def chrono_but(enJeu: EnJeu, ecran: Tk):
             print('but rouge')
     GPIO.cleanup()
     print('Nombre de buts rouge : ', but1, ' et nombre de buts bleu : ' , but2)
-
-chrono_but()
