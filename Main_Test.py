@@ -24,12 +24,12 @@ jeu.Bouton_retour.configure(command=lambda: versMenu(jeu, menu))
 jeu.Bouton_pause.configure(command=lambda: pausePartie(jeu, ecran))
 #jeu.Bouton_relance.configure(command=lambda: relancePartie(jeu, ecran))
 jeu.Bouton_arret.configure(command=lambda: arretPartie(jeu, ecran))
-"""
-jeu.Bouton_moins_bleu.configure(command=lambda: moinsBleu(jeu))
-jeu.Bouton_plus_bleu.configure(command=lambda: plusBleu(jeu))
-jeu.Bouton_moins_rouge.configure(command=lambda: moinsRouge(jeu))
-jeu.Bouton_plus_rouge.configure(command=lambda: plusRouge(jeu))
-"""
+
+jeu.Bouton_moins_bleu.configure(command=lambda: moinsBleu(jeu, ecran))
+jeu.Bouton_plus_bleu.configure(command=lambda: plusBleu(jeu, ecran))
+jeu.Bouton_moins_rouge.configure(command=lambda: moinsRouge(jeu, ecran))
+jeu.Bouton_plus_rouge.configure(command=lambda: plusRouge(jeu, ecran))
+
 menu.affiche()
 
 #menu.cache()

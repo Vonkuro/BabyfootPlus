@@ -172,22 +172,33 @@ def arretPartie(enJeu: EnJeu, ecran: Tk):
     enJeu.Bouton_pause.place_forget()
     ecran.update()
     
-"""
+
 #Bouton - bleu
-def moinsBleu(enJeu: EnJeu):
-    #if enJeu.Label_score_bleu!=0:
-    #    enJeu.Label_score_bleu=enJeu.Label_score_bleu-1
+def moinsBleu(enJeu: EnJeu, ecran: Tk):
+    if Capteur.score_bleu != 0:
+        Capteur.score_bleu = Capteur.score_bleu -1
+        texte = Capteur.numberToString(Capteur.score_bleu )
+        enJeu.Label_score_bleu.configure(text=texte)
+        ecran.update()
 
 #Bouton + bleu
-def plusBleu(enJeu: EnJeu):
-    #enJeu.Label_score_bleu=enJeu.Label_score_bleu+1
+def plusBleu(enJeu: EnJeu, ecran: Tk):
+    Capteur.score_bleu = Capteur.score_bleu +1
+    texte = Capteur.numberToString(Capteur.score_bleu )
+    enJeu.Label_score_bleu.configure(text=texte)
+    ecran.update()
 
 #Bouton - rouge
-def moinsRouge(enJeu: EnJeu):
-    #if enJeu.Label_score_rouge!=0:
-    #    enJeu.Label_score_rouge=enJeu.Label_score_rouge-1
+def moinsRouge(enJeu: EnJeu, ecran: Tk):
+    if Capteur.score_rouge != 0:
+        Capteur.score_rouge = Capteur.score_rouge -1
+        texte = Capteur.numberToString(Capteur.score_rouge )
+        enJeu.Label_score_rouge.configure(text=texte)
+        ecran.update()
 
 #Bouton + rouge
-def plusRouge(enJeu: EnJeu):
-    #enJeu.Label_score_rouge=enJeu.Label_score_rouge+1
-"""
+def plusRouge(enJeu: EnJeu, ecran: Tk):
+    Capteur.score_rouge = Capteur.score_rouge +1
+    texte = Capteur.numberToString(Capteur.score_rouge )
+    enJeu.Label_score_rouge.configure(text=texte)
+    ecran.update()
