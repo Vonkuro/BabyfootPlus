@@ -277,7 +277,7 @@ def chrono_temps(enJeu: EnJeu, ecran: Tk):
         if Pause :
             break
         else :
-            temps = time.time() - debut
+            temps = time.time() - debut - Temps_Pause
             if int(temps)>=nouveauTemps:
                 nouveauTemps=nouveauTemps+1
                 chronoActuel=600-int(temps)
@@ -362,7 +362,7 @@ def chrono_but(enJeu: EnJeu, ecran: Tk):
         if Pause :
             break
         else :
-            temps = time.time() - debut
+            temps = time.time() - debut - Temps_Pause
             if int(temps)>=nouveauTemps:
                 nouveauTemps=nouveauTemps+1
                 chronoActuel=600-int(temps)
