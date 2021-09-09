@@ -91,6 +91,7 @@ def chrono(enJeu: EnJeu, ecran: Tk):
             minute_chrono = int(chronoActuel/60)
             label_chrono= str(minute_chrono)+ " : " + str(seconde_chrono)
             enJeu.Label_chrono.configure(text=label_chrono)
+            ecran.update()
         time.sleep(0.01)
         GPIO.output(TRIG1, True)
         time.sleep(0.00001)
@@ -158,10 +159,17 @@ def chrono_temps(enJeu: EnJeu, ecran: Tk):
 
     but1 = 0
     but2 = 0
-
+    nouveauTemps=0
     while temps<600:
         temps = time.time() - debut
-        print ('Waiting a few seconds for the sensor to settle')
+        if int(temps)==nouveauTemps:
+            nouveauTemps=nouveauTemps+1
+            chronoActuel=600-int(temps)
+            seconde_chrono = chronoActuel%60
+            minute_chrono = int(chronoActuel/60)
+            label_chrono= str(minute_chrono)+ " : " + str(seconde_chrono)
+            enJeu.Label_chrono.configure(text=label_chrono)
+            ecran.update()
         time.sleep(0.01)
         GPIO.output(TRIG1, True)
         time.sleep(0.00001)
@@ -190,8 +198,6 @@ def chrono_temps(enJeu: EnJeu, ecran: Tk):
         distance2 = pulse_duration2 * 17165
         distance2 = round(distance2, 1)
         
-        print ('Distance 1:',distance1,'cm')
-        print ('Distance 2:',distance2,'cm')
         valeurbut = 1 + int(temps/60)
         if distance1<20:
             but1 = but1 + valeurbut
@@ -211,9 +217,7 @@ def chrono_temps(enJeu: EnJeu, ecran: Tk):
 
 def chrono_but(enJeu: EnJeu, ecran: Tk):
     debut = time.time()
-    temps = time.time() - debut
-
-    
+    temps = time.time() - debut  
 
     GPIO.setmode(GPIO.BCM)
     GPIO.setwarnings(False)
@@ -234,11 +238,18 @@ def chrono_but(enJeu: EnJeu, ecran: Tk):
     but1 = 0
     but2 = 0
     valeurbut = 1
-
+    nouveauTemps=0
     while temps<600:
         temps = time.time() - debut
+        if int(temps)==nouveauTemps:
+            nouveauTemps=nouveauTemps+1
+            chronoActuel=600-int(temps)
+            seconde_chrono = chronoActuel%60
+            minute_chrono = int(chronoActuel/60)
+            label_chrono= str(minute_chrono)+ " : " + str(seconde_chrono)
+            enJeu.Label_chrono.configure(text=label_chrono)
+            ecran.update()
         print(valeurbut)
-        print ('Waiting a few seconds for the sensor to settle')
         time.sleep(0.01)
         GPIO.output(TRIG1, True)
         time.sleep(0.00001)
@@ -267,8 +278,6 @@ def chrono_but(enJeu: EnJeu, ecran: Tk):
         distance2 = pulse_duration2 * 17165
         distance2 = round(distance2, 1)
         
-        print ('Distance 1:',distance1,'cm')
-        print ('Distance 2:',distance2,'cm')
         if distance1<20:
             but1 = but1 + valeurbut
             enJeu.Label_score_bleu.configure(text=str(but1))
