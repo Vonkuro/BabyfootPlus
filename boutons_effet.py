@@ -135,6 +135,7 @@ def relancePartie(enJeu: EnJeu, mode, ecran: Tk):
     enJeu.Bouton_pause.place(x=1069,y=0)
     
     Capteur.Pause = False
+    Capteur.Temps_Pause = Capteur.temps - Capteur.debut
     ecran.update()
 
     if mode=="classique":

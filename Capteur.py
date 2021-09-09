@@ -8,14 +8,16 @@ debut = time.time()
 temps = time.time() - debut
 score_bleu = 0
 score_rouge = 0
+Temps_Pause = 0.0
 
 def initialisation():
-    global Pause, debut, temps, score_bleu, score_rouge
+    global Pause, debut, temps, score_bleu, score_rouge, Temps_Pause
     Pause = False
     debut = time.time()
     temps = time.time() - debut
     score_bleu = 0
     score_rouge = 0
+    Temps_Pause = 0.0
 
 
 def numberToString(number: int):
@@ -158,7 +160,7 @@ def but():
     return but
 """
 def chrono(enJeu: EnJeu, ecran: Tk):
-    global Pause, debut, temps, score_bleu, score_rouge
+    global Pause, debut, temps, score_bleu, score_rouge, Temps_Pause
     #debut = time.time()
     #temps = time.time() - debut
 
@@ -181,13 +183,14 @@ def chrono(enJeu: EnJeu, ecran: Tk):
     #score_bleu = 0
     #score_rouge = 0
     nouveauTemps=0
-    Temps_Pause = time.time() - temps
+    #Temps_Pause = 0.0
 
     while temps<600:
         if Pause :
             break
         else :
             temps = time.time() - debut - Temps_Pause
+            print(temps)
             if int(temps)>=nouveauTemps:
                 nouveauTemps=nouveauTemps+1
                 chronoActuel=600-int(temps)
