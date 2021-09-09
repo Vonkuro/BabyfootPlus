@@ -162,9 +162,9 @@ class EnJeu():
 
         self.Label_titre.configure(text= "Classique", font= "Arial, 50", bg= "#000000", fg="#ffffff")
 
-        self.Label_score_bleu.configure(text= "0", font= "Arial, 125", bg= "#4f4f4f", fg="#ffffff")
+        self.Label_score_bleu.configure(text= "00", font= "Arial, 125", bg= "#4f4f4f", fg="#ffffff")
         self.Label_score_tiret.configure(text= "-", font= "Arial, 125", bg= "#4f4f4f", fg="#ffffff")
-        self.Label_score_rouge.configure(text= "0", font= "Arial, 125", bg= "#4f4f4f", fg="#ffffff")
+        self.Label_score_rouge.configure(text= "00", font= "Arial, 125", bg= "#4f4f4f", fg="#ffffff")
 
         self.Label_texte_bleu.configure(text= "Equipe Bleue", font= "Arial, 28", bg= "#818181", fg="#ffffff")
         self.Label_texte_rouge.configure(text= "Equipe Rouge", font= "Arial, 28", bg= "#818181", fg="#ffffff")
@@ -178,7 +178,7 @@ class EnJeu():
 
         self.Bouton_moins_bleu.place(x= 116, y= 33.5)
         self.Bouton_plus_bleu.place(x= 308, y= 33.5)
-        self.Label_score_bleu.place(x= 628, y= 15)
+        self.Label_score_bleu.place(x= 528, y= 15)
         self.Label_score_tiret.place(x= 760, y= 15)
         self.Label_score_rouge.place(x= 864, y= 15)
         self.Bouton_plus_rouge.place(x= 1140, y= 33.5)
