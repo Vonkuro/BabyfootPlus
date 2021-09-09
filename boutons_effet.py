@@ -99,6 +99,8 @@ def debutPartie(enJeu: EnJeu, mode, ecran):
     
     Capteur.Pause = False
 
+    Capteur.initialisation()
+
     if mode=="classique":
         Capteur.classique(enJeu, ecran)
     elif mode=="chrono":
