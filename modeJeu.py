@@ -1,6 +1,6 @@
 import time
 from Capteur import *
-
+"""
 def ModeClassique(enJeu, ecran):
     score_rouge = 0
     score_bleu = 0
@@ -19,3 +19,4 @@ def ModeClassique(enJeu, ecran):
             ecran.update()
             print("Score bleu :" +str(score_bleu))
             time.sleep(1)
+"""

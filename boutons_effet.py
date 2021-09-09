@@ -77,7 +77,7 @@ def debutPartie(enJeu: EnJeu, mode, ecran):
     ecran.update()
 """
     if mode=="classique":
-        ModeClassique(enJeu, ecran)
+        classique(enJeu, ecran)
     elif mode=="chrono":
         chrono(enJeu, ecran)
     elif mode=="chronoTemps":
