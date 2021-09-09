@@ -320,14 +320,14 @@ def chrono_temps(enJeu: EnJeu, ecran: Tk):
             
             valeurbut = 1 + int(temps/60)
             if distance1<20:
-                score_bleu = score_bleu + 1
+                score_bleu = score_bleu + valeurbut
                 label_score_bleu=numberToString(score_bleu)
                 enJeu.Label_score_bleu.configure(text=label_score_bleu)
                 ecran.update()
                 time.sleep(1)
                 print('but bleu')
             if distance2<20:
-                score_rouge = score_rouge + 1
+                score_rouge = score_rouge + valeurbut
                 label_score_rouge=numberToString(score_rouge)
                 enJeu.Label_score_rouge.configure(text=label_score_rouge)
                 ecran.update()
@@ -405,7 +405,7 @@ def chrono_but(enJeu: EnJeu, ecran: Tk):
             distance2 = round(distance2, 1)
             
             if distance1<20:
-                score_bleu = score_bleu + 1
+                score_bleu = score_bleu + valeurbut
                 label_score_bleu=numberToString(score_bleu)
                 enJeu.Label_score_bleu.configure(text=label_score_bleu)
                 ecran.update()
@@ -413,7 +413,7 @@ def chrono_but(enJeu: EnJeu, ecran: Tk):
                 valeurbut = valeurbut + 1
                 print('but bleu')
             if distance2<20:
-                score_rouge = score_rouge + 1
+                score_rouge = score_rouge + valeurbut
                 label_score_rouge=numberToString(score_rouge)
                 enJeu.Label_score_rouge.configure(text=label_score_rouge)
                 ecran.update()
