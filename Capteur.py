@@ -3,6 +3,12 @@ import RPi.GPIO as GPIO
 import time
 import tkinter as Tk
 
+def numberToString(number: int):
+    if number<=9:
+        return "0"+str(number)
+    else:
+        return str(number)
+
 def classique(enJeu: EnJeu, ecran: Tk):
     GPIO.setmode(GPIO.BCM)
     GPIO.setwarnings(False)
@@ -30,7 +36,9 @@ def classique(enJeu: EnJeu, ecran: Tk):
             nouveauTemps=nouveauTemps+1
             seconde_chrono = int(temps)%60
             minute_chrono = int(temps)/60
-            label_chrono= str(minute_chrono)+ " : " + str(seconde_chrono)
+            label_seconde= numberToString(seconde_chrono)
+            label_minute= numberToString(minute_chrono)
+            label_chrono= str(label_minute)+ " : " + str(label_seconde)
             enJeu.Label_chrono.configure(text=label_chrono)
             ecran.update()
         time.sleep(0.01)
@@ -167,7 +175,9 @@ def chrono(enJeu: EnJeu, ecran: Tk):
                 chronoActuel=600-int(temps)
                 seconde_chrono = chronoActuel%60
                 minute_chrono = int(chronoActuel/60)
-                label_chrono= str(minute_chrono)+ " : " + str(seconde_chrono)
+                label_seconde= numberToString(seconde_chrono)
+                label_minute= numberToString(minute_chrono)
+                label_chrono= str(label_minute)+ " : " + str(label_seconde)
                 enJeu.Label_chrono.configure(text=label_chrono)
                 ecran.update()
             time.sleep(0.01)
@@ -245,7 +255,9 @@ def chrono_temps(enJeu: EnJeu, ecran: Tk):
             chronoActuel=600-int(temps)
             seconde_chrono = chronoActuel%60
             minute_chrono = int(chronoActuel/60)
-            label_chrono= str(minute_chrono)+ " : " + str(seconde_chrono)
+            label_seconde= numberToString(seconde_chrono)
+            label_minute= numberToString(minute_chrono)
+            label_chrono= str(label_minute)+ " : " + str(label_seconde)
             enJeu.Label_chrono.configure(text=label_chrono)
             ecran.update()
         time.sleep(0.01)
@@ -324,7 +336,9 @@ def chrono_but(enJeu: EnJeu, ecran: Tk):
             chronoActuel=600-int(temps)
             seconde_chrono = chronoActuel%60
             minute_chrono = int(chronoActuel/60)
-            label_chrono= str(minute_chrono)+ " : " + str(seconde_chrono)
+            label_seconde= numberToString(seconde_chrono)
+            label_minute= numberToString(minute_chrono)
+            label_chrono= str(label_minute)+ " : " + str(label_seconde)
             enJeu.Label_chrono.configure(text=label_chrono)
             ecran.update()
         print(valeurbut)
