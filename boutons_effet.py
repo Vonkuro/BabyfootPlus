@@ -16,9 +16,9 @@ def versClassique(menu : Menu, classique: EnJeu, ecran: Tk):
     classique.Label_titre.place(x=810 , y=64.81)
 
     #remise à zero du score et du chrono
-    classique.Label_chrono.configure(text="00:00")
-    classique.Label_score_rouge.configure(text="0")
-    classique.Label_score_bleu.configure(text="0")
+    classique.Label_chrono.configure(text="00 : 00", font= "Arial, 150", bg= "#818181", fg="#ffffff")
+    classique.Label_score_rouge.configure(text="0", font= "Arial, 125", bg= "#4f4f4f", fg="#ffffff")
+    classique.Label_score_bleu.configure(text="0", font= "Arial, 125", bg= "#4f4f4f", fg="#ffffff")
 
     #configure le mode de jeu demandé : Bouton commencer la partie
     classique.Bouton_debut.configure(command=lambda:debutPartie(classique, "classique", ecran))
@@ -33,9 +33,9 @@ def versChrono(menu: Menu, chrono: EnJeu, ecran: Tk):
     chrono.Label_titre.place(x=850 , y=64.81)
     
     #remise à zero du score et du chrono
-    chrono.Label_chrono.configure(text="10:00")
-    chrono.Label_score_rouge.configure(text="0")
-    chrono.Label_score_bleu.configure(text="0")
+    chrono.Label_chrono.configure(text="10 : 00", font= "Arial, 150", bg= "#818181", fg="#ffffff")
+    chrono.Label_score_rouge.configure(text="0", font= "Arial, 125", bg= "#4f4f4f", fg="#ffffff")
+    chrono.Label_score_bleu.configure(text="0", font= "Arial, 125", bg= "#4f4f4f", fg="#ffffff")
 
 
     #configure le mode de jeu demandé : Bouton commencer la partie
@@ -51,9 +51,9 @@ def versChronoTemps(menu: Menu, chronoTemps: EnJeu, ecran: Tk):
     chronoTemps.Label_titre.place(x=770 , y=64.81)
     
     #remise à zero du score et du chrono
-    chronoTemps.Label_chrono.configure(text="10:00")
-    chronoTemps.Label_score_rouge.configure(text="0")
-    chronoTemps.Label_score_bleu.configure(text="0")
+    chronoTemps.Label_chrono.configure(text="10 : 00", font= "Arial, 150", bg= "#818181", fg="#ffffff")
+    chronoTemps.Label_score_rouge.configure(text="0", font= "Arial, 125", bg= "#4f4f4f", fg="#ffffff")
+    chronoTemps.Label_score_bleu.configure(text="0", font= "Arial, 125", bg= "#4f4f4f", fg="#ffffff")
 
     #configure le mode de jeu demandé : Bouton commencer la partie
     chronoTemps.Bouton_debut.configure(command=lambda:debutPartie(chronoTemps, "chronoTemps", ecran))
@@ -68,9 +68,9 @@ def versChronoBut(menu: Menu, chronoBut: EnJeu, ecran: Tk):
     chronoBut.Label_titre.place(x=790 , y=64.81)
 
     #remise à zero du score et du chrono
-    chronoBut.Label_chrono.configure(text="10:00")
-    chronoBut.Label_score_rouge.configure(text="0")
-    chronoBut.Label_score_bleu.configure(text="0")
+    chronoBut.Label_chrono.configure(text="10 : 00", font= "Arial, 150", bg= "#818181", fg="#ffffff")
+    chronoBut.Label_score_rouge.configure(text="0", font= "Arial, 125", bg= "#4f4f4f", fg="#ffffff")
+    chronoBut.Label_score_bleu.configure(text="0", font= "Arial, 125", bg= "#4f4f4f", fg="#ffffff")
 
     #configure le mode de jeu demandé : Bouton commencer la partie
     chronoBut.Bouton_debut.configure(command=lambda:debutPartie(chronoBut, "chronoBut", ecran))
