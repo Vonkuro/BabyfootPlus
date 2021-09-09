@@ -120,10 +120,12 @@ def chrono(enJeu: EnJeu):
 
         if distance1<20:
             but1 = but1 + 1
+            enJeu.Label_score_bleu.configure(text=str(but1))
             time.sleep(1)
             print('but bleu')
         if distance2<20:
             but2 = but2 + 1
+            enJeu.Label_score_rouge.configure(text=str(but2))
             time.sleep(1)
             print('but rouge')
     GPIO.cleanup()
@@ -190,10 +192,12 @@ def chrono_temps(enJeu: EnJeu):
         valeurbut = 1 + int(temps/60)
         if distance1<20:
             but1 = but1 + valeurbut
+            enJeu.Label_score_bleu.configure(text=str(but1))
             time.sleep(1)
             print('but bleu')
         if distance2<20:
             but2 = but2 + valeurbut
+            enJeu.Label_score_rouge.configure(text=str(but2))
             time.sleep(1)
             print('but rouge')
     GPIO.cleanup()
@@ -262,11 +266,13 @@ def chrono_but(enJeu: EnJeu):
         print ('Distance 2:',distance2,'cm')
         if distance1<20:
             but1 = but1 + valeurbut
+            enJeu.Label_score_bleu.configure(text=str(but1))
             time.sleep(1)
             valeurbut = valeurbut + 1
             print('but bleu')
         if distance2<20:
             but2 = but2 + valeurbut
+            enJeu.Label_score_rouge.configure(text=str(but2))
             time.sleep(1)
             valeurbut = valeurbut + 1
             print('but rouge')
