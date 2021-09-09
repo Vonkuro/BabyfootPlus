@@ -3,6 +3,9 @@ import RPi.GPIO as GPIO
 import time
 import tkinter as Tk
 
+#Variables Globales
+Pause = False
+
 def classique(enJeu, ecran):
     GPIO.setmode(GPIO.BCM)
     GPIO.setwarnings(False)
@@ -132,6 +135,7 @@ def but():
     return but
 """
 def chrono(enJeu: EnJeu, ecran: Tk):
+    global Pause
     debut = time.time()
     temps = time.time() - debut
 
@@ -156,55 +160,58 @@ def chrono(enJeu: EnJeu, ecran: Tk):
     nouveauTemps=0
 
     while temps<600:
-        temps = time.time() - debut
-        if int(temps)>=nouveauTemps:
-            nouveauTemps=nouveauTemps+1
-            chronoActuel=600-int(temps)
-            seconde_chrono = chronoActuel%60
-            minute_chrono = int(chronoActuel/60)
-            label_chrono= str(minute_chrono)+ " : " + str(seconde_chrono)
-            enJeu.Label_chrono.configure(text=label_chrono)
-            ecran.update()
-        time.sleep(0.01)
-        GPIO.output(TRIG1, True)
-        time.sleep(0.00001)
-        GPIO.output(TRIG1, False)
+        if Pause :
+            time.sleep(0.05)
+        else :
+            temps = time.time() - debut
+            if int(temps)>=nouveauTemps:
+                nouveauTemps=nouveauTemps+1
+                chronoActuel=600-int(temps)
+                seconde_chrono = chronoActuel%60
+                minute_chrono = int(chronoActuel/60)
+                label_chrono= str(minute_chrono)+ " : " + str(seconde_chrono)
+                enJeu.Label_chrono.configure(text=label_chrono)
+                ecran.update()
+            time.sleep(0.01)
+            GPIO.output(TRIG1, True)
+            time.sleep(0.00001)
+            GPIO.output(TRIG1, False)
 
-        while GPIO.input(ECHO1)==0:
-            pulse_start1 = time.time()
-        while GPIO.input(ECHO1)==1:
-            pulse_end1 = time.time()
+            while GPIO.input(ECHO1)==0:
+                pulse_start1 = time.time()
+            while GPIO.input(ECHO1)==1:
+                pulse_end1 = time.time()
 
 
-        pulse_duration1 = pulse_end1 - pulse_start1
-        distance1 = pulse_duration1 * 17165
-        distance = round(distance1, 1)
+            pulse_duration1 = pulse_end1 - pulse_start1
+            distance1 = pulse_duration1 * 17165
+            distance = round(distance1, 1)
 
-        GPIO.output(TRIG2, True)
-        time.sleep(0.00001)
-        GPIO.output(TRIG2, False)
+            GPIO.output(TRIG2, True)
+            time.sleep(0.00001)
+            GPIO.output(TRIG2, False)
 
-        while GPIO.input(ECHO2)==0:
-            pulse_start2 = time.time()
-        while GPIO.input(ECHO2)==1:
-            pulse_end2 = time.time()
+            while GPIO.input(ECHO2)==0:
+                pulse_start2 = time.time()
+            while GPIO.input(ECHO2)==1:
+                pulse_end2 = time.time()
 
-        pulse_duration2 = pulse_end2 - pulse_start2
-        distance2 = pulse_duration2 * 17165
-        distance2 = round(distance2, 1)
-        
-        if distance1<20:
-            but1 = but1 + 1
-            enJeu.Label_score_bleu.configure(text=str(but1))
-            ecran.update()
-            time.sleep(1)
-            print('but bleu')
-        if distance2<20:
-            but2 = but2 + 1
-            enJeu.Label_score_rouge.configure(text=str(but2))
-            ecran.update()
-            time.sleep(1)
-            print('but rouge')
+            pulse_duration2 = pulse_end2 - pulse_start2
+            distance2 = pulse_duration2 * 17165
+            distance2 = round(distance2, 1)
+            
+            if distance1<20:
+                but1 = but1 + 1
+                enJeu.Label_score_bleu.configure(text=str(but1))
+                ecran.update()
+                time.sleep(1)
+                print('but bleu')
+            if distance2<20:
+                but2 = but2 + 1
+                enJeu.Label_score_rouge.configure(text=str(but2))
+                ecran.update()
+                time.sleep(1)
+                print('but rouge')
     GPIO.cleanup()
     print('Nombre de buts rouge : ', but1, ' et nombre de buts bleu : ' , but2)
 
