@@ -99,11 +99,12 @@ def debutPartie(enJeu: EnJeu, mode, ecran):
     
     enJeu.Bouton_arret.place(x=203,y=0)
     enJeu.Bouton_pause.place(x=1069,y=0)
-    ecran.update()
+    
     
     Capteur.Pause = False
 
     Capteur.initialisation()
+    ecran.update()
 
     if mode=="classique":
         Capteur.classique(enJeu, ecran)
@@ -160,7 +161,7 @@ def relancePartie(enJeu: EnJeu, mode, ecran: Tk):
 #Bouton arret et Bouton relance/pause disparaissent
 def arretPartie(enJeu: EnJeu, ecran: Tk):
     Capteur.EnCour = False
-    
+
     enJeu.Bouton_debut.place(x=204,y=0)
     enJeu.Bouton_retour.place(x=82 , y=62)
     
