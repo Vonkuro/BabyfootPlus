@@ -39,6 +39,7 @@ def versChrono(menu: Menu, chrono: EnJeu, ecran: Tk):
 
     #configure le mode de jeu demandé : Bouton commencer la partie
     chrono.Bouton_debut.configure(command=lambda:debutPartie(chrono, "chrono", ecran))
+    chrono.Bouton_relance.configure(command=lambda: relancePartie(chrono, "chrono", ecran))
  
     chrono.affiche()
 
@@ -125,15 +126,27 @@ def pausePartie(enJeu: EnJeu, ecran: Tk):
 
 #Bouton de relance
 #Bouton relance devient Bouton pause
-def relancePartie(enJeu: EnJeu, ecran: Tk):
+def relancePartie(enJeu: EnJeu, mode, ecran: Tk):
     print("c'est reparti")
     enJeu.Bouton_relance.place_forget()
     
     enJeu.Bouton_pause.place(x=1069,y=0)
     
     Capteur.Pause = False
-
     ecran.update()
+
+    if mode=="classique":
+        Capteur.classique(enJeu, ecran)
+    elif mode=="chrono":
+        Capteur.chrono(enJeu, ecran)
+    elif mode=="chronoTemps":
+        Capteur.chrono_temps(enJeu, ecran)
+    elif mode=="chronoBut":
+        Capteur.chrono_but(enJeu, ecran)
+    else:
+        print("impossible")
+
+    
 
 #Bouton arret de partie
 #Bouton retour et Bouton début de partie apparaissent

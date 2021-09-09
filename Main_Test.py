@@ -22,7 +22,7 @@ jeu.Bouton_retour.configure(command=lambda: versMenu(jeu, menu))
 
 #jeu
 jeu.Bouton_pause.configure(command=lambda: pausePartie(jeu, ecran))
-jeu.Bouton_relance.configure(command=lambda: relancePartie(jeu, ecran))
+#jeu.Bouton_relance.configure(command=lambda: relancePartie(jeu, ecran))
 jeu.Bouton_arret.configure(command=lambda: arretPartie(jeu, ecran))
 """
 jeu.Bouton_moins_bleu.configure(command=lambda: moinsBleu(jeu))

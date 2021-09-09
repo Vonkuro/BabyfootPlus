@@ -4,6 +4,19 @@ import time
 import tkinter as Tk
 
 Pause = False
+debut = time.time()
+temps = time.time() - debut
+score_bleu = 0
+score_rouge = 0
+
+def initialisation():
+    global Pause, debut, temps, score_bleu, score_rouge
+    Pause = False
+    debut = time.time()
+    temps = time.time() - debut
+    score_bleu = 0
+    score_rouge = 0
+
 
 def numberToString(number: int):
     if number<=9:
@@ -145,9 +158,9 @@ def but():
     return but
 """
 def chrono(enJeu: EnJeu, ecran: Tk):
-    global Pause
-    debut = time.time()
-    temps = time.time() - debut
+    global Pause, debut, temps, score_bleu, score_rouge
+    #debut = time.time()
+    #temps = time.time() - debut
 
     GPIO.setmode(GPIO.BCM)
     GPIO.setwarnings(False)
@@ -165,14 +178,14 @@ def chrono(enJeu: EnJeu, ecran: Tk):
     GPIO.setup(ECHO2,GPIO.IN)
     GPIO.output(TRIG2, False)
 
-    score_bleu = 0
-    score_rouge = 0
+    #score_bleu = 0
+    #score_rouge = 0
     nouveauTemps=0
-    Temps_Pause = 0.0
+    Temps_Pause = time.time() - temps
 
     while temps<600:
         if Pause :
-            Temps_Pause = time.time() - temps
+            break
         else :
             temps = time.time() - debut - Temps_Pause
             if int(temps)>=nouveauTemps:
