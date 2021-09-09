@@ -9,15 +9,17 @@ temps = time.time() - debut
 score_bleu = 0
 score_rouge = 0
 Temps_Pause = 0.0
+EnCour = False
 
 def initialisation():
-    global Pause, debut, temps, score_bleu, score_rouge, Temps_Pause
+    global Pause, debut, temps, score_bleu, score_rouge, Temps_Pause, EnCour
     Pause = False
     debut = time.time()
     temps = time.time() - debut
     score_bleu = 0
     score_rouge = 0
     Temps_Pause = 0.0
+    EnCour = True
 
 
 def numberToString(number: int):
@@ -27,7 +29,7 @@ def numberToString(number: int):
         return str(number)
 
 def classique(enJeu: EnJeu, ecran: Tk):
-    global Pause, debut, temps, score_bleu, score_rouge, Temps_Pause
+    global Pause, debut, temps, score_bleu, score_rouge, Temps_Pause, EnCour
     GPIO.setmode(GPIO.BCM)
     GPIO.setwarnings(False)
     TRIG1 = 23
@@ -48,7 +50,7 @@ def classique(enJeu: EnJeu, ecran: Tk):
     nouveauTemps=0
     #debut = time.time()
     
-    while (score_bleu < 10 and score_rouge < 10):
+    while (score_bleu < 10 and score_rouge < 10) and EnCour:
         if Pause :
             break
         else :
@@ -164,7 +166,7 @@ def but():
     return but
 """
 def chrono(enJeu: EnJeu, ecran: Tk):
-    global Pause, debut, temps, score_bleu, score_rouge, Temps_Pause
+    global Pause, debut, temps, score_bleu, score_rouge, Temps_Pause, EnCour
     #debut = time.time()
     #temps = time.time() - debut
 
@@ -189,7 +191,7 @@ def chrono(enJeu: EnJeu, ecran: Tk):
     nouveauTemps=0
     #Temps_Pause = 0.0
 
-    while temps<600:
+    while temps<600 and EnCour:
         if Pause :
             break
         else :
@@ -248,7 +250,7 @@ def chrono(enJeu: EnJeu, ecran: Tk):
     GPIO.cleanup()
 
 def chrono_temps(enJeu: EnJeu, ecran: Tk):
-    global Pause, debut, temps, score_bleu, score_rouge, Temps_Pause
+    global Pause, debut, temps, score_bleu, score_rouge, Temps_Pause, EnCour
     #debut = time.time()
     #temps = time.time() - debut
 
@@ -273,7 +275,7 @@ def chrono_temps(enJeu: EnJeu, ecran: Tk):
     #score_rouge= 0
     #score_bleu=0
     nouveauTemps=0
-    while temps<600:
+    while temps<600 and EnCour:
         if Pause :
             break
         else :
@@ -334,7 +336,7 @@ def chrono_temps(enJeu: EnJeu, ecran: Tk):
     GPIO.cleanup()
 
 def chrono_but(enJeu: EnJeu, ecran: Tk):
-    global Pause, debut, temps, score_bleu, score_rouge, Temps_Pause
+    global Pause, debut, temps, score_bleu, score_rouge, Temps_Pause, EnCour
     #debut = time.time()
     #temps = time.time() - debut  
 
@@ -358,7 +360,7 @@ def chrono_but(enJeu: EnJeu, ecran: Tk):
     #score_bleu = 0
     valeurbut = 1
     nouveauTemps=0
-    while temps<600:
+    while temps<600 and EnCour:
         if Pause :
             break
         else :

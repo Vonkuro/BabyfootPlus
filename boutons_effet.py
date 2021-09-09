@@ -159,6 +159,8 @@ def relancePartie(enJeu: EnJeu, mode, ecran: Tk):
 #Bouton retour et Bouton début de partie apparaissent
 #Bouton arret et Bouton relance/pause disparaissent
 def arretPartie(enJeu: EnJeu, ecran: Tk):
+    Capteur.EnCour = False
+    
     enJeu.Bouton_debut.place(x=204,y=0)
     enJeu.Bouton_retour.place(x=82 , y=62)
     
