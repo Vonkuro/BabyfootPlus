@@ -67,20 +67,20 @@ class Menu():
 
         #Paramétrage des Boutons
             #Images
-        photo_classique = Image.open(".\Images\Images_Renommee\Mode_Babyfoot.png")
+        photo_classique = Image.open("./Images/Images_Renommee/Mode_Babyfoot.png")
         taille = (300 , 400)
         photo_classique = photo_classique.resize(taille)
         self.photoImage_classique = ImageTk.PhotoImage(photo_classique)
 
-        photo_chrono = Image.open(".\Images\Images_Renommee\Mode_Chrono.png")
+        photo_chrono = Image.open("./Images/Images_Renommee/Mode_Chrono.png")
         photo_chrono = photo_chrono.resize(taille)
         self.photoImage_chrono = ImageTk.PhotoImage(photo_chrono)
 
-        photo_chrono_plus_temps = Image.open(".\Images\Images_Renommee\Mode_Chrono_Deux.png")
+        photo_chrono_plus_temps = Image.open("./Images/Images_Renommee/Mode_Chrono_Deux.png")
         photo_chrono_plus_temps = photo_chrono_plus_temps.resize(taille)
         self.photoImage_chrono_plus_temps = ImageTk.PhotoImage(photo_chrono_plus_temps)
 
-        photo_chrono_plus_but = Image.open(".\Images\Images_Renommee\Mode_But.png")
+        photo_chrono_plus_but = Image.open("./Images/Images_Renommee/Mode_But.png")
         photo_chrono_plus_but = photo_chrono_plus_but.resize(taille)
         self.photoImage_chrono_plus_but = ImageTk.PhotoImage(photo_chrono_plus_but)
         

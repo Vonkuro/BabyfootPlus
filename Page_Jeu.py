@@ -76,47 +76,47 @@ class EnJeu():
         self.Bouton_moins_rouge = tk.Button(master= self.score)
 
         #Paramétrage des Boutons
-        photo_retour = Image.open(".\Images\Images_Renommee\Fleche_Retour.png")
+        photo_retour = Image.open("./Images/Images_Renommee/Fleche_Retour.png")
         taille = (91 , 77)
         photo_retour = photo_retour.resize(taille)
         self.photoImage_retour = ImageTk.PhotoImage(photo_retour)
 
-        photo_debut = Image.open(".\Images\Images_Renommee\Bouton_Commencer.png")
+        photo_debut = Image.open("./Images/Images_Renommee/Bouton_Commencer.png")
         taille = (1513 , 126)
         photo_debut = photo_debut.resize(taille)
         self.photoImage_debut = ImageTk.PhotoImage(photo_debut)
 
-        photo_arret = Image.open(".\Images\Images_Renommee\Bouton_Arreter.png")
+        photo_arret = Image.open("./Images/Images_Renommee/Bouton_Arreter.png")
         taille = (648 , 126)
         photo_arret = photo_arret.resize(taille)
         self.photoImage_arret = ImageTk.PhotoImage(photo_arret)
 
-        photo_pause = Image.open(".\Images\Images_Renommee\Bouton_Mettre_Pause.png")
+        photo_pause = Image.open("./Images/Images_Renommee/Bouton_Mettre_Pause.png")
         taille = (648 , 126)
         photo_pause = photo_pause.resize(taille)
         self.photoImage_pause = ImageTk.PhotoImage(photo_pause)
 
-        photo_relance = Image.open(".\Images\Images_Renommee\Bouton_Lecture_Partie.png")
+        photo_relance = Image.open("./Images/Images_Renommee/Bouton_Lecture_Partie.png")
         taille = (648 , 126)
         photo_relance = photo_relance.resize(taille)
         self.photoImage_relance = ImageTk.PhotoImage(photo_relance)
 
-        photo_plus_bleu = Image.open(".\Images\Images_Renommee\Bouton_Vert.png")
+        photo_plus_bleu = Image.open("./Images/Images_Renommee/Bouton_Vert.png")
         taille = (126 , 126)
         photo_plus_bleu = photo_plus_bleu.resize(taille)
         self.photoImage_plus_bleu = ImageTk.PhotoImage(photo_plus_bleu)
 
-        photo_moins_bleu = Image.open(".\Images\Images_Renommee\Bouton_Rouge.png")
+        photo_moins_bleu = Image.open("./Images/Images_Renommee/Bouton_Rouge.png")
         taille = (126 , 126)
         photo_moins_bleu = photo_moins_bleu.resize(taille)
         self.photoImage_moins_bleu = ImageTk.PhotoImage(photo_moins_bleu)
 
-        photo_plus_rouge = Image.open(".\Images\Images_Renommee\Bouton_Vert.png")
+        photo_plus_rouge = Image.open("./Images/Images_Renommee/Bouton_Vert.png")
         taille = (126 , 126)
         photo_plus_rouge = photo_plus_rouge.resize(taille)
         self.photoImage_plus_rouge = ImageTk.PhotoImage(photo_plus_rouge)
 
-        photo_moins_rouge = Image.open(".\Images\Images_Renommee\Bouton_Rouge.png")
+        photo_moins_rouge = Image.open("./Images/Images_Renommee/Bouton_Rouge.png")
         taille = (126 , 126)
         photo_moins_rouge = photo_moins_rouge.resize(taille)
         self.photoImage_moins_rouge = ImageTk.PhotoImage(photo_moins_rouge)
@@ -148,12 +148,12 @@ class EnJeu():
 
         
         #Paramétrage des Labels
-        photo_drapeau_bleu = Image.open(".\Images\Images_Renommee\Drapeau_Bleu.png")
+        photo_drapeau_bleu = Image.open("./Images/Images_Renommee/Drapeau_Bleu.png")
         taille = (95 , 110)
         photo_drapeau_bleu = photo_drapeau_bleu.resize(taille)
         self.photoImage_drapeau_bleu = ImageTk.PhotoImage(photo_drapeau_bleu)
 
-        photo_drapeau_rouge = Image.open(".\Images\Images_Renommee\Drapeau_Rouge.png")
+        photo_drapeau_rouge = Image.open("./Images/Images_Renommee/Drapeau_Rouge.png")
         photo_drapeau_rouge = photo_drapeau_rouge.resize(taille)
         self.photoImage_drapeau_rouge = ImageTk.PhotoImage(photo_drapeau_rouge)
 
