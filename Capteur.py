@@ -71,13 +71,15 @@ def classique(enJeu: EnJeu, ecran: Tk):
         
         if distance1<20:
             score_bleu = score_bleu + 1
-            enJeu.Label_score_bleu.configure(text=str(score_bleu))
+            label_score_bleu=numberToString(score_bleu)
+            enJeu.Label_score_bleu.configure(text=label_score_bleu)
             ecran.update()
             time.sleep(1)
             print('but bleu')
         if distance2<20:
             score_rouge = score_rouge + 1
-            enJeu.Label_score_rouge.configure(text=str(score_rouge))
+            label_score_rouge=numberToString(score_rouge)
+            enJeu.Label_score_rouge.configure(text=label_score_rouge)
             ecran.update()
             time.sleep(1)
             print('but rouge')
@@ -161,8 +163,8 @@ def chrono(enJeu: EnJeu, ecran: Tk):
     GPIO.setup(ECHO2,GPIO.IN)
     GPIO.output(TRIG2, False)
 
-    but1 = 0
-    but2 = 0
+    score_bleu = 0
+    score_rouge = 0
     nouveauTemps=0
 
     while temps<600:
@@ -209,19 +211,18 @@ def chrono(enJeu: EnJeu, ecran: Tk):
             distance2 = round(distance2, 1)
             
             if distance1<20:
-                but1 = but1 + 1
-                enJeu.Label_score_bleu.configure(text=str(but1))
+                score_bleu = score_bleu + 1
+                label_score_bleu=numberToString(score_bleu)
+                enJeu.Label_score_bleue.configure(text=label_score_bleu)
                 ecran.update()
                 time.sleep(1)
-                print('but bleu')
             if distance2<20:
-                but2 = but2 + 1
-                enJeu.Label_score_rouge.configure(text=str(but2))
+                score_rouge = score_rouge + 1
+                label_score_rouge=numberToString(score_rouge)
+                enJeu.Label_score_rouge.configure(text=label_score_rouge)
                 ecran.update()
                 time.sleep(1)
-                print('but rouge')
     GPIO.cleanup()
-    print('Nombre de buts rouge : ', but1, ' et nombre de buts bleu : ' , but2)
 
 def chrono_temps(enJeu: EnJeu, ecran: Tk):
     debut = time.time()
@@ -245,8 +246,8 @@ def chrono_temps(enJeu: EnJeu, ecran: Tk):
     GPIO.setup(ECHO2,GPIO.IN)
     GPIO.output(TRIG2, False)
 
-    but1 = 0
-    but2 = 0
+    score_rouge= 0
+    score_bleu=0
     nouveauTemps=0
     while temps<600:
         temps = time.time() - debut
@@ -290,20 +291,20 @@ def chrono_temps(enJeu: EnJeu, ecran: Tk):
         
         valeurbut = 1 + int(temps/60)
         if distance1<20:
-            but1 = but1 + valeurbut
-            enJeu.Label_score_bleu.configure(text=str(but1))
+            score_bleu = score_bleu + 1
+            label_score_bleu=numberToString(score_bleu)
+            enJeu.Label_score_bleue.configure(text=label_score_bleu)
             ecran.update()
             time.sleep(1)
             print('but bleu')
         if distance2<20:
-            but2 = but2 + valeurbut
-            enJeu.Label_score_rouge.configure(text=str(but2))
+            score_rouge = score_rouge + 1
+            label_score_rouge=numberToString(score_rouge)
+            enJeu.Label_score_rouge.configure(text=label_score_rouge)
             ecran.update()
             time.sleep(1)
             print('but rouge')
     GPIO.cleanup()
-    print('Nombre de buts rouge : ', but1, ' et nombre de buts bleu : ' , but2)
-
 
 def chrono_but(enJeu: EnJeu, ecran: Tk):
     debut = time.time()
@@ -325,8 +326,8 @@ def chrono_but(enJeu: EnJeu, ecran: Tk):
     GPIO.setup(ECHO2,GPIO.IN)
     GPIO.output(TRIG2, False)
 
-    but1 = 0
-    but2 = 0
+    score_rouge = 0
+    score_bleu = 0
     valeurbut = 1
     nouveauTemps=0
     while temps<600:
@@ -371,18 +372,19 @@ def chrono_but(enJeu: EnJeu, ecran: Tk):
         distance2 = round(distance2, 1)
         
         if distance1<20:
-            but1 = but1 + valeurbut
-            enJeu.Label_score_bleu.configure(text=str(but1))
+            score_bleu = score_bleu + 1
+            label_score_bleu=numberToString(score_bleu)
+            enJeu.Label_score_bleu.configure(text=label_score_bleu)
             ecran.update()
             time.sleep(1)
             valeurbut = valeurbut + 1
             print('but bleu')
         if distance2<20:
-            but2 = but2 + valeurbut
-            enJeu.Label_score_rouge.configure(text=str(but2))
+            score_rouge = score_rouge + 1
+            label_score_rouge=numberToString(score_rouge)
+            enJeu.Label_score_rouge.configure(text=label_score_rouge)
             ecran.update()
             time.sleep(1)
             valeurbut = valeurbut + 1
             print('but rouge')
     GPIO.cleanup()
-    print('Nombre de buts rouge : ', but1, ' et nombre de buts bleu : ' , but2)
