@@ -1,5 +1,5 @@
-from Capteur import *
-from modeJeu import ModeClassique
+#from Capteur import *
+#from modeJeu import ModeClassique
 from Page_Choix import *
 from Page_Jeu import *
 
@@ -47,7 +47,7 @@ def versChronoBut(menu: Menu, chronoBut: EnJeu):
     menu.cache()
     
     #Titre
-    chronoBut.Label_titre.configure(text= "Chrone buts", font= "Arial, 50", bg= "#000000", fg="#ffffff")
+    chronoBut.Label_titre.configure(text= "Chrono buts", font= "Arial, 50", bg= "#000000", fg="#ffffff")
     chronoBut.Label_titre.place(x=821.5 , y=64.81)
 
     #configure le mode de jeu demandé : Bouton commencer la partie
@@ -73,7 +73,7 @@ def debutPartie(enJeu: EnJeu, mode):
     
     enJeu.Bouton_arret.place(x=203,y=0)
     enJeu.Bouton_pause.place(x=1069,y=0)
-
+"""
     if mode=="classique":
         ModeClassique(enJeu)
     elif mode=="chrono":
@@ -84,7 +84,7 @@ def debutPartie(enJeu: EnJeu, mode):
         chrono_but(enJeu)
     else:
         print("impossible")
-
+"""
 #Bouton de pause
 #Bouton pause devient Bouton relance
 def pausePartie(enJeu: EnJeu):
