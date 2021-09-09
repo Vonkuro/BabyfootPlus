@@ -2,6 +2,7 @@ import Capteur
 from Page_Choix import *
 from Page_Jeu import *
 import tkinter as Tk
+import time
 
 # ----- Changement des écrans
 
@@ -135,7 +136,7 @@ def relancePartie(enJeu: EnJeu, mode, ecran: Tk):
     enJeu.Bouton_pause.place(x=1069,y=0)
     
     Capteur.Pause = False
-    Capteur.Temps_Pause = Capteur.temps - Capteur.debut
+    Capteur.Temps_Pause = time.time() - Capteur.debut - Capteur.temps
     ecran.update()
 
     if mode=="classique":
